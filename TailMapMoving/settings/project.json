@@ -6,18 +6,7 @@
     ],
     [
       false,
-      false
-    ],
-    [
-      false,
-      false,
-      false
-    ],
-    [
-      false,
-      false,
-      false,
-      false
+      true
     ]
   ],
   "design-resolution-height": 640,
@@ -37,9 +26,7 @@
   "fit-width": false,
   "group-list": [
     "default",
-    "map",
-    "ui",
-    "m"
+    "UI"
   ],
   "last-module-event-record-time": 0,
   "simulator-orientation": false,
@@ -48,5 +35,6 @@
     "width": 960
   },
   "use-customize-simulator": true,
-  "use-project-simulator-setting": false
+  "use-project-simulator-setting": false,
+  "start-scene": "current"
 }

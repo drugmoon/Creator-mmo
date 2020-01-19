@@ -56,7 +56,8 @@ cc.Class({
 
 		_isMoving: {
 			default: false
-		}
+		},
+		speed : 1,
 	},
 
     // use this for initialization
@@ -99,17 +100,26 @@ cc.Class({
 			// this.mainCamera.getComponent(cc.Camera).getCameraToWorldPoint(touchPos, targetPos)
     		// let tilePos = this._pixelToTile(targetPos);
 			// this._moveToTile(tilePos);
-			
-			var x = this.mainCamera.node.x;
-            var y = this.mainCamera.node.y;
-            if(x - lx * this.speed<4800 && x -lx * this.speed>0){
 
-                this.mainCamera.x = x - lx * this.speed;
-            }
-            if(y - ly * this.speed<2240 && y - ly * this.speed>0){
-                this.mainCamera.y = y - ly * this.speed;
-            }
 		});
+
+		//注册事件
+		this.node.on(cc.Node.EventType.TOUCH_MOVE, (event) => {
+ 
+			var lx = event.getDeltaX();
+			var ly = event.getDeltaY();
+			var x = this.mainCamera.x;
+			var y = this.mainCamera.y;
+			if(x - lx * this.speed<4800 && x -lx * this.speed>0){
+	
+				this.mainCamera.x = x - lx * this.speed;
+			}
+			if(y - ly * this.speed<2240 && y - ly * this.speed>0){
+				this.mainCamera.y = y - ly * this.speed;
+			}
+		});
+
+
 	},
 	update(dt) {
         // 更新摄像机         

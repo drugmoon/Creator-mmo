@@ -13,6 +13,7 @@ cc.Class({
 			default: null,
 			type: cc.Node
 		},
+		hero:cc.Node,
 		player: {
 			default: null,
 			type: cc.Node
@@ -58,6 +59,7 @@ cc.Class({
 			default: false
 		},
 		speed : 1,
+		down: false
 	},
 
     // use this for initialization
@@ -93,43 +95,96 @@ cc.Class({
     	// let endPos = cc.v2(endObj.x, endObj.y);
 		// this._endTile = this._pixelToTile(endPos);
 
+		var hero = this.hero.getComponent("global")
+
+
 		//注册事件
-		this.node.on(cc.Node.EventType.TOUCH_START, (event) => {
-			let touchPos = event.touch.getLocation();
-			let targetPos = cc.v2();
-			// this.mainCamera.getComponent(cc.Camera).getCameraToWorldPoint(touchPos, targetPos)
-    		// let tilePos = this._pixelToTile(targetPos);
-			// this._moveToTile(tilePos);
+		// this.node.on(cc.Node.EventType.TOUCH_START, (event) => {
+
+		// 	console.log("event.getButton() is " + event.getButton())
+  
+		// });
+
+		// //注册事件
+		// this.node.on(cc.Node.EventType.TOUCH_START, (event) => {
+		// 	let touchPos = event.touch.getLocation();
+		// 	let targetPos = cc.v2();
+		// 	this.mainCamera.getComponent(cc.Camera).getCameraToWorldPoint(touchPos, targetPos)
+			
+		// 	console.log(" TOUCH_START " + targetPos.x + " -- " + targetPos.y)
+		// 	//let tilePos = this._pixelToTile(targetPos);
+		// 	// this._moveToTile(tilePos);
+
+		// });
+
+		var self = this;
+
+		this.node.on('mousedown', function(event){
+
+			if(event.getButton() == cc.Event.EventMouse.BUTTON_RIGHT){
+				self.down = true
+			}
+		});
+		this.node.on('mousemove', function(event){
+			console.log("event.mousemove() is " + event.getButton())
+			
+			if (self.down){
+			
+				var lx = event.getDelta().x;
+				var ly = event.getDelta().y;
+				var x = self.mainCamera.x;
+				var y = self.mainCamera.y;
+				cc.log("X "  + lx)
+				cc.log("Y "  + ly)
+				if(x - lx * self.speed<4480 && x -lx * self.speed>0){
+		
+					self.mainCamera.x = x - lx * self.speed;
+				}
+				if(y - ly * self.speed<2160 && y - ly * self.speed>0){
+					self.mainCamera.y = y - ly * self.speed;
+				}
+
+			}
 
 		});
+		this.node.on('mouseup', function(event){
+			console.log("event.getButton() is " + event.getButton())
+			self.down = false
+			if(event.getButton() == cc.Event.EventMouse.BUTTON_LEFT){
 
-		//注册事件
-		this.node.on(cc.Node.EventType.TOUCH_MOVE, (event) => {
+				let touchPos = event.getLocation();
+				let targetPos = cc.v2();
+				self.mainCamera.getComponent(cc.Camera).getCameraToWorldPoint(touchPos, targetPos)
+				
+				console.log(" TOUCH " + targetPos.x + " - " + targetPos.y)
+				//let tilePos = this._pixelToTile(targetPos);
+				// this._moveToTile(tilePos);
+				
+				var json1 = {"type":"move", "x":targetPos.x, "y":targetPos.y}
+				cc.log("mouseup." + JSON.stringify(json1))
+				hero.changeTarget(targetPos.x,targetPos.y)
+				self.updateCamera(targetPos)
+			}
+
+		});
  
-			var lx = event.getDeltaX();
-			var ly = event.getDeltaY();
-			var x = this.mainCamera.x;
-			var y = this.mainCamera.y;
-			if(x - lx * this.speed<4800 && x -lx * this.speed>0){
-	
-				this.mainCamera.x = x - lx * this.speed;
-			}
-			if(y - ly * this.speed<2240 && y - ly * this.speed>0){
-				this.mainCamera.y = y - ly * this.speed;
-			}
-		});
-
-
 	},
 	update(dt) {
         // 更新摄像机         
        // this.updateNearCamera(dt);
-        
-       
-    },
+   
+	},
+	
 	updateNearCamera(dt) {
-        this.mainCamera.x += dt* 300;
-    },
+	
+	},
+	
+	updateCamera(pos) {
+		var self = this;
+		this.mainCamera.x = pos.x - 1280/2;
+		this.mainCamera.y = pos.y - 720/2;
+	},
+	
     onDestroy () {
     },
 

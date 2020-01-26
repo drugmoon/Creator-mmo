@@ -1,0 +1,18 @@
+info face="Î¢ÈíÑÅºÚ" size=32 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
+common lineHeight=32 base=26 scaleW=256 scaleH=150 pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="power2_0.png"
+chars count=14
+char id=48   x=92    y=0     width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=49   x=120   y=0     width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=50   x=148   y=0     width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=51   x=176   y=0     width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=52   x=204   y=0     width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=53   x=0     y=51    width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=54   x=28    y=51    width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=55   x=56    y=51    width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=56   x=84    y=51    width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=57   x=112   y=51    width=27    height=50    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=20987 x=0     y=0     width=47    height=50    xoffset=0     yoffset=0     xadvance=47    page=0  chnl=15
+char id=21147 x=48    y=0     width=43    height=50    xoffset=0     yoffset=0     xadvance=43    page=0  chnl=15
+char id=25915 x=140   y=51    width=50    height=49    xoffset=0     yoffset=0     xadvance=50    page=0  chnl=15
+char id=65306 x=232   y=0     width=18    height=50    xoffset=0     yoffset=0     xadvance=18    page=0  chnl=15

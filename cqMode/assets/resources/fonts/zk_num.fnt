@@ -1,0 +1,15 @@
+info face="Arial" size=32 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
+common lineHeight=32 base=26 scaleW=300 scaleH=40 pages=1 packed=1 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="zk_num_0.png"
+chars count=11
+char id=48   x=157   y=0     width=25    height=31    xoffset=0     yoffset=0     xadvance=25    page=0  chnl=15
+char id=49   x=233   y=0     width=16    height=31    xoffset=0     yoffset=0     xadvance=16    page=0  chnl=15
+char id=50   x=183   y=0     width=25    height=31    xoffset=0     yoffset=0     xadvance=25    page=0  chnl=15
+char id=51   x=209   y=0     width=23    height=31    xoffset=0     yoffset=0     xadvance=23    page=0  chnl=15
+char id=52   x=103   y=0     width=26    height=31    xoffset=0     yoffset=0     xadvance=26    page=0  chnl=15
+char id=53   x=26    y=0     width=27    height=32    xoffset=0     yoffset=0     xadvance=27    page=0  chnl=15
+char id=54   x=79    y=0     width=23    height=32    xoffset=0     yoffset=0     xadvance=23    page=0  chnl=15
+char id=55   x=250   y=0     width=22    height=30    xoffset=0     yoffset=0     xadvance=22    page=0  chnl=15
+char id=56   x=54    y=0     width=24    height=32    xoffset=0     yoffset=0     xadvance=24    page=0  chnl=15
+char id=57   x=130   y=0     width=26    height=31    xoffset=0     yoffset=0     xadvance=26    page=0  chnl=15
+char id=58   x=0     y=0     width=25    height=35    xoffset=0     yoffset=0     xadvance=25    page=0  chnl=15

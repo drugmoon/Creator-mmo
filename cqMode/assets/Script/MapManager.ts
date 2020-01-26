@@ -17,12 +17,18 @@ export default class MapManager extends cc.Component {
     public mlogic_width = 0;
     public mlogic_height = 0;
     public mGroundDir = 0
+    private _ByteArray
     public getBlocklength(){
         return this.mlogic_width * this.mlogic_height;
     }
-    public initMap(callback: Function){
+      
+    onDestroy(){
 
-        ByteArray.getInstance().loadData("", () => {
+        this._ByteArray.destroy()
+    }
+    public initMap(callback: Function){
+        this._ByteArray = new ByteArray()
+        this._ByteArray.loadData("resources/map/v102.mapo", () => {
 
             this.initData()
             callback()
@@ -30,16 +36,16 @@ export default class MapManager extends cc.Component {
     }
 
     initData(){
-        var mVersion = ByteArray.getInstance().readUShort();
+        var mVersion = this._ByteArray.readUShort();
         console.log("mVersion " + mVersion)
         if(mVersion == 4)
         {
-            this.mGroundWidth = ByteArray.getInstance().readShort();
-            this.mGroundHeight = ByteArray.getInstance().readShort();
-            this.mlogic_width = ByteArray.getInstance().readShort();
-            this.mlogic_height = ByteArray.getInstance().readShort();
-            this.mGroundDir = ByteArray.getInstance().readByte();
-            var size = ByteArray.getInstance().readInt();
+            this.mGroundWidth = this._ByteArray.readShort();
+            this.mGroundHeight = this._ByteArray.readShort();
+            this.mlogic_width = this._ByteArray.readShort();
+            this.mlogic_height = this._ByteArray.readShort();
+            this.mGroundDir = this._ByteArray.readByte();
+            var size = this._ByteArray.readInt();
 
             cc.log("mGroundWidth " + this.mGroundWidth)
             cc.log("mGroundHeight " + this.mGroundHeight)
@@ -54,8 +60,8 @@ export default class MapManager extends cc.Component {
             var l;
             while(ind<size)
             {
-                b = ByteArray.getInstance().readUByte();
-                l = ByteArray.getInstance().readUByte();
+                b = this._ByteArray.readUByte();
+                l = this._ByteArray.readUByte();
                 for (i = 0; i < l; i++)
                 {
                     this.mBlockData[badindex++] = b & 0xFF;

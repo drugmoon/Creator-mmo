@@ -4,11 +4,11 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class ByteArray extends cc.Component {
-    private static instance: ByteArray = null;
-    public static getInstance(): ByteArray {
-        this.instance = this.instance || new ByteArray()
-        return this.instance
-    }
+    // private static instance: ByteArray = null;
+    // public static getInstance(): ByteArray {
+    //     this.instance = this.instance || new ByteArray()
+    //     return this.instance
+    // }
 
     private m_size:number = 0;
 	private m_pos:number = 0;
@@ -48,7 +48,7 @@ export default class ByteArray extends cc.Component {
     }
     loadData(url, callback: Function)
     {
-        var path = cc.url.raw("resources/map/v102.mapo");
+        var path = cc.url.raw(url);//
         var self = this
         cc.loader.load({ url: path, type: "binary", }, function (err, data) {
             self.data = data

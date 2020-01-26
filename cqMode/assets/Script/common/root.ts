@@ -1,6 +1,6 @@
  import { FishState, FishType, MAX_SIZE,TILE_WIDTH, TILE_HEIGHT } from './ComDefine'
 import MapManager  from '../MapManager'
-
+import BinManager from '../BinManager'
 const {ccclass, property} = cc._decorator;
  
 @ccclass
@@ -45,6 +45,9 @@ export default class ByteArray extends cc.Component {
                 sj.addBlock(MapManager.getInstance().mBlockData[i], i);
             }
         })
+
+
+        BinManager.getInstance().loadBiz(1,2)
     }
  
     setScaleAdd()

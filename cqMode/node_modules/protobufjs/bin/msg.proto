@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package msg;
+
+message Login {
+    string name = 1;
+    string pwd = 2;
+}

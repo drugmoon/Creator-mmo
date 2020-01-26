@@ -8,17 +8,15 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class BinManager extends cc.Component {
+    private static instance: BinManager = null;
+    public static getInstance(): BinManager {
+        this.instance = this.instance || new BinManager()
+        return this.instance
+    }
 
-    @property(cc.Label)
-    label: cc.Label = null;
 
-    @property
-    text: string = 'hello';
 
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {}
 
     start () {
 

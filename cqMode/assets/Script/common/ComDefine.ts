@@ -10,10 +10,13 @@ enum FishState {
     alive,
     dead
 }
+let MAX_SIZE = 1024*24;
 
+let TILE_WIDTH = 66;
+let TILE_HEIGHT = 44;
 interface define {
 
 }
 
 
-export { FishState, FishType };
+export { FishState, FishType,MAX_SIZE,TILE_WIDTH, TILE_HEIGHT};

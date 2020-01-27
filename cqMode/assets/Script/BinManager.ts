@@ -10,10 +10,13 @@ export default class BinManager extends cc.Component {
         this.instance = this.instance || new BinManager()
         return this.instance
     }
-
+    mFrameMapList = []
 
     loadBiz(group, path){
-
+        var abc:any[][] = [];
+        abc[1] = [1,2,3]
+        abc[2] = [4,6,7]
+        abc[1][2]
         var ba = new ByteArray()
         ba.loadData("resources/biz/cloth.biz", () => {
 
@@ -46,10 +49,14 @@ export default class BinManager extends cc.Component {
                 for(k=0;k<wfd.mDirCount;k++)
                 {
                     //wfd.mFrameData[k] = new FrameInfo()[];//wfd.mFrameCount
+                    var list = []
                     for(j=0;j<wfd.mFrameCount;j++)
                     {
-                        wfd.mFrameData[k] = [];
+                        //wfd.mFrameData[k] = [];
+                        list[j] =  new FrameInfo()
                     }
+
+                    wfd.mFrameData[k] = list
                 }
                 //change = getOffVec(group,file_id);
                 for(j = 0;j < frame_num; j++)
@@ -74,17 +81,23 @@ export default class BinManager extends cc.Component {
                     frame.sourceSize = cc.size(sw,sh);
                     frame.rotated = ro > 0 ? true : false;
         
-                    wfd.mFrameData[frame_id/10000][frame_id%10000]=frame;
+                    wfd.mFrameData[0][1]=frame;
+
+                    var a = parseInt( (frame_id/10000).toString())
+                    var b = frame_id%10000;
+                    cc.log(a + " - " + b)
+                    wfd.mFrameData[a][b]=frame;
+                    //wfd.mFrameData[frame_id/10000][frame_id%10000]=frame;
                 }
 
-            //     if(mFrameMapList[group].find(file_id)==mFrameMapList[group].end())
-            //     {
-            //         mFrameMapList[group][file_id]=wfd;
-            //     }
-            //     else
-            //     {
-            //         delete wfd;
-            //     }
+                if(this.mFrameMapList[group].find(file_id) == this.mFrameMapList[group].end())
+                {
+                    this.mFrameMapList[group][file_id] = wfd;
+                }
+                else
+                {
+                   // delete wfd;
+                }
             } 
         })
 

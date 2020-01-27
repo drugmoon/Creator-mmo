@@ -14,7 +14,7 @@ class FrameData extends cc.Component {
     public mFileID = 0;
 	public mDirCount = 0;
 	public mFrameCount = 0;
-    public mFrameData = [];
+    public mFrameData:any[][] = [];
     private my2DArray : Array<Array<any>> = new Array<Array<any>>();
 
     public FileID(){return this.mFileID;}

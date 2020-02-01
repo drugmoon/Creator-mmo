@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="111|Win32">
+      <Configuration>111</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseL|Win32">
+      <Configuration>ReleaseL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{74F8D48D-50E2-4AE5-BD7C-A55201216610}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseL|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='111|Win32'">
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseL|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseL|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\lua-5.1.4\src\;..\Sexylib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)GameServerLib.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\lua-5.1.4\src\;..\Sexylib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)GameServerLib.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseL|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\lua-5.1.4\src\;..\Sexylib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;LIMIT_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)GameServerLib.lib</OutputFile>
+    </Lib>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cjson\fpconv.c" />
+    <ClCompile Include="cjson\lua_cjson.c" />
+    <ClCompile Include="cjson\strbuf.c" />
+    <ClCompile Include="ConstsString.cpp" />
+    <ClCompile Include="CoupleCouple.cpp" />
+    <ClCompile Include="DomainCouple.cpp" />
+    <ClCompile Include="DomainData.cpp" />
+    <ClCompile Include="DomainGroup.cpp" />
+    <ClCompile Include="DomainGuild.cpp" />
+    <ClCompile Include="DomainPlay.cpp" />
+    <ClCompile Include="GameServerLib.cpp" />
+    <ClCompile Include="GameSession.cpp" />
+    <ClCompile Include="GMCommand.cpp" />
+    <ClCompile Include="GroupGroup.cpp" />
+    <ClCompile Include="GuildGuild.cpp" />
+    <ClCompile Include="ManagerAutoRun.cpp" />
+    <ClCompile Include="ManagerChargeDart.cpp" />
+    <ClCompile Include="ManagerChart.cpp" />
+    <ClCompile Include="ManagerConsignment.cpp" />
+    <ClCompile Include="ManagerCouple.cpp" />
+    <ClCompile Include="ManagerDeny.cpp" />
+    <ClCompile Include="ManagerDenySell.cpp" />
+    <ClCompile Include="ManagerFilter.cpp" />
+    <ClCompile Include="ManagerFly.cpp" />
+    <ClCompile Include="ManagerGroup.cpp" />
+    <ClCompile Include="ManagerGuild.cpp" />
+    <ClCompile Include="ManagerItemDef.cpp" />
+    <ClCompile Include="ManagerLevelInfo.cpp" />
+    <ClCompile Include="ManagerMail.cpp" />
+    <ClCompile Include="ManagerMap.cpp" />
+    <ClCompile Include="ManagerMonDef.cpp" />
+    <ClCompile Include="ManagerMonster.cpp" />
+    <ClCompile Include="ManagerNotice.cpp" />
+    <ClCompile Include="ManagerObjFuncs.cpp" />
+    <ClCompile Include="ManagerRelationCache.cpp" />
+    <ClCompile Include="ManagerSkillDef.cpp" />
+    <ClCompile Include="ManagerStatus.cpp" />
+    <ClCompile Include="ManagerSwordDef.cpp" />
+    <ClCompile Include="ManagerTask.cpp" />
+    <ClCompile Include="ManagerTotalAttr.cpp" />
+    <ClCompile Include="ManagerTrapDef.cpp" />
+    <ClCompile Include="PlayActiveObject.cpp" />
+    <ClCompile Include="PlayAIObject.cpp" />
+    <ClCompile Include="PlayMap.cpp" />
+    <ClCompile Include="PlayMapItem.cpp" />
+    <ClCompile Include="PlayMapObject.cpp" />
+    <ClCompile Include="PlayMapTrap.cpp" />
+    <ClCompile Include="PlayMonster.cpp" />
+    <ClCompile Include="PlayMonsterBossNomove.cpp" />
+    <ClCompile Include="PlayMonsterCaller.cpp" />
+    <ClCompile Include="PlayMonsterDummy.cpp" />
+    <ClCompile Include="PlayMonsterExplode.cpp" />
+    <ClCompile Include="PlayMonsterHelper.cpp" />
+    <ClCompile Include="PlayMonsterNomove.cpp" />
+    <ClCompile Include="PlayMonsterPuppet.cpp" />
+    <ClCompile Include="PlayMonsterRemote.cpp" />
+    <ClCompile Include="PlayMonsterRemoteNomove.cpp" />
+    <ClCompile Include="PlayNeutral.cpp" />
+    <ClCompile Include="PlayNeutralRam.cpp" />
+    <ClCompile Include="PlayNpc.cpp" />
+    <ClCompile Include="PlaySlave.cpp" />
+    <ClCompile Include="ScriptLua.cpp" />
+    <ClCompile Include="ScriptLuaGuildBind.cpp" />
+    <ClCompile Include="ScriptLuaItemBind.cpp" />
+    <ClCompile Include="ScriptLuaMapBind.cpp" />
+    <ClCompile Include="ScriptLuaMonsterBind.cpp" />
+    <ClCompile Include="ScriptLuaNpcBind.cpp" />
+    <ClCompile Include="ScriptLuaPlayerBind.cpp" />
+    <ClCompile Include="ScriptLuaSlaveBind.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseL|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SubAchieve.cpp" />
+    <ClCompile Include="SubAction.cpp" />
+    <ClCompile Include="SubFriend.cpp" />
+    <ClCompile Include="SubGift.cpp" />
+    <ClCompile Include="SubItem.cpp" />
+    <ClCompile Include="SubMail.cpp" />
+    <ClCompile Include="SubSkill.cpp" />
+    <ClCompile Include="SubStatus.cpp" />
+    <ClCompile Include="SubTask.cpp" />
+    <ClCompile Include="TimerFix.cpp" />
+    <ClCompile Include="TimerFrame.cpp" />
+    <ClCompile Include="TimerSecond.cpp" />
+    <ClCompile Include="UtilString.cpp" />
+    <ClCompile Include="zlib\adler32.c" />
+    <ClCompile Include="zlib\compress.c" />
+    <ClCompile Include="zlib\crc32.c" />
+    <ClCompile Include="zlib\deflate.c" />
+    <ClCompile Include="zlib\gzclose.c" />
+    <ClCompile Include="zlib\gzlib.c" />
+    <ClCompile Include="zlib\gzread.c" />
+    <ClCompile Include="zlib\gzwrite.c" />
+    <ClCompile Include="zlib\infback.c" />
+    <ClCompile Include="zlib\inffast.c" />
+    <ClCompile Include="zlib\inflate.c" />
+    <ClCompile Include="zlib\inftrees.c" />
+    <ClCompile Include="zlib\trees.c" />
+    <ClCompile Include="zlib\uncompr.c" />
+    <ClCompile Include="zlib\zutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cjson\fpconv.h" />
+    <ClInclude Include="cjson\lua_cjson.h" />
+    <ClInclude Include="cjson\strbuf.h" />
+    <ClInclude Include="ConstsString.h" />
+    <ClInclude Include="CoupleCouple.h" />
+    <ClInclude Include="DomainCouple.h" />
+    <ClInclude Include="DomainData.h" />
+    <ClInclude Include="DomainGroup.h" />
+    <ClInclude Include="DomainGuild.h" />
+    <ClInclude Include="DomainPlay.h" />
+    <ClInclude Include="GameServerLib.h" />
+    <ClInclude Include="GameSession.h" />
+    <ClInclude Include="GMCommand.h" />
+    <ClInclude Include="GroupGroup.h" />
+    <ClInclude Include="GuildGuild.h" />
+    <ClInclude Include="ManagerAutoRun.h" />
+    <ClInclude Include="ManagerChargeDart.h" />
+    <ClInclude Include="ManagerChart.h" />
+    <ClInclude Include="ManagerConsignment.h" />
+    <ClInclude Include="ManagerDeny.h" />
+    <ClInclude Include="ManagerDenySell.h" />
+    <ClInclude Include="ManagerFilter.h" />
+    <ClInclude Include="ManagerFly.h" />
+    <ClInclude Include="ManagerGroup.h" />
+    <ClInclude Include="ManagerGuild.h" />
+    <ClInclude Include="ManagerItemDef.h" />
+    <ClInclude Include="ManagerLevelInfo.h" />
+    <ClInclude Include="ManagerMail.h" />
+    <ClInclude Include="ManagerMap.h" />
+    <ClInclude Include="ManagerMonDef.h" />
+    <ClInclude Include="ManagerMonster.h" />
+    <ClInclude Include="ManagerNotice.h" />
+    <ClInclude Include="ManagerObjFuncs.h" />
+    <ClInclude Include="ManagerRelationCache.h" />
+    <ClInclude Include="ManagerSkillDef.h" />
+    <ClInclude Include="ManagerCouple.h" />
+    <ClInclude Include="ManagerStatus.h" />
+    <ClInclude Include="ManagerSwordDef.h" />
+    <ClInclude Include="ManagerTask.h" />
+    <ClInclude Include="ManagerTotalAttr.h" />
+    <ClInclude Include="ManagerTrapDef.h" />
+    <ClInclude Include="PlayActiveObject.h" />
+    <ClInclude Include="PlayAIObject.h" />
+    <ClInclude Include="PlayMap.h" />
+    <ClInclude Include="PlayMapItem.h" />
+    <ClInclude Include="PlayMapObject.h" />
+    <ClInclude Include="PlayMapObjectNode.h" />
+    <ClInclude Include="PlayMapTrap.h" />
+    <ClInclude Include="PlayMonster.h" />
+    <ClInclude Include="PlayMonsterBossNomove.h" />
+    <ClInclude Include="PlayMonsterCaller.h" />
+    <ClInclude Include="PlayMonsterDummy.h" />
+    <ClInclude Include="PlayMonsterExplode.h" />
+    <ClInclude Include="PlayMonsterHelper.h" />
+    <ClInclude Include="PlayMonsterNomove.h" />
+    <ClInclude Include="PlayMonsterPuppet.h" />
+    <ClInclude Include="PlayMonsterRemote.h" />
+    <ClInclude Include="PlayMonsterRemoteNomove.h" />
+    <ClInclude Include="PlayNeutral.h" />
+    <ClInclude Include="PlayNeutralRam.h" />
+    <ClInclude Include="PlayNpc.h" />
+    <ClInclude Include="PlaySlave.h" />
+    <ClInclude Include="ScriptLua.h" />
+    <ClInclude Include="ScriptLuaGuildBind.h" />
+    <ClInclude Include="ScriptLuaItemBind.h" />
+    <ClInclude Include="ScriptLuaMapBind.h" />
+    <ClInclude Include="ScriptLuaMonsterBind.h" />
+    <ClInclude Include="ScriptLuaNpcBind.h" />
+    <ClInclude Include="ScriptLuaPlayerBind.h" />
+    <ClInclude Include="ScriptLuaSlaveBind.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SubAchieve.h" />
+    <ClInclude Include="SubAction.h" />
+    <ClInclude Include="SubFriend.h" />
+    <ClInclude Include="SubGift.h" />
+    <ClInclude Include="SubItem.h" />
+    <ClInclude Include="SubMail.h" />
+    <ClInclude Include="SubSkill.h" />
+    <ClInclude Include="SubStatus.h" />
+    <ClInclude Include="SubTask.h" />
+    <ClInclude Include="TimerFix.h" />
+    <ClInclude Include="TimerFrame.h" />
+    <ClInclude Include="TimerSecond.h" />
+    <ClInclude Include="UtilFun.h" />
+    <ClInclude Include="UtilString.h" />
+    <ClInclude Include="zlib\crc32.h" />
+    <ClInclude Include="zlib\deflate.h" />
+    <ClInclude Include="zlib\gzguts.h" />
+    <ClInclude Include="zlib\inffast.h" />
+    <ClInclude Include="zlib\inffixed.h" />
+    <ClInclude Include="zlib\inflate.h" />
+    <ClInclude Include="zlib\inftrees.h" />
+    <ClInclude Include="zlib\trees.h" />
+    <ClInclude Include="zlib\zconf.h" />
+    <ClInclude Include="zlib\zlib.h" />
+    <ClInclude Include="zlib\zutil.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

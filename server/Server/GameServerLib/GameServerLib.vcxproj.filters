@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ConstsString.cpp" />
+    <ClCompile Include="UtilString.cpp" />
+    <ClCompile Include="DomainData.cpp" />
+    <ClCompile Include="DomainGroup.cpp" />
+    <ClCompile Include="DomainGuild.cpp" />
+    <ClCompile Include="DomainPlay.cpp" />
+    <ClCompile Include="GameServerLib.cpp" />
+    <ClCompile Include="GameSession.cpp" />
+    <ClCompile Include="GMCommand.cpp" />
+    <ClCompile Include="GroupGroup.cpp" />
+    <ClCompile Include="GuildGuild.cpp" />
+    <ClCompile Include="ManagerAutoRun.cpp" />
+    <ClCompile Include="ManagerChart.cpp" />
+    <ClCompile Include="ManagerDeny.cpp" />
+    <ClCompile Include="ManagerDenySell.cpp" />
+    <ClCompile Include="ManagerFilter.cpp" />
+    <ClCompile Include="ManagerGroup.cpp" />
+    <ClCompile Include="ManagerGuild.cpp" />
+    <ClCompile Include="ManagerItemDef.cpp" />
+    <ClCompile Include="ManagerLevelInfo.cpp" />
+    <ClCompile Include="ManagerMap.cpp" />
+    <ClCompile Include="ManagerMonDef.cpp" />
+    <ClCompile Include="ManagerMonster.cpp" />
+    <ClCompile Include="ManagerNotice.cpp" />
+    <ClCompile Include="ManagerSkillDef.cpp" />
+    <ClCompile Include="PlayActiveObject.cpp" />
+    <ClCompile Include="PlayAIObject.cpp" />
+    <ClCompile Include="PlayMap.cpp" />
+    <ClCompile Include="PlayMapItem.cpp" />
+    <ClCompile Include="PlayMapObject.cpp" />
+    <ClCompile Include="PlayMonster.cpp" />
+    <ClCompile Include="PlayMonsterBossNomove.cpp" />
+    <ClCompile Include="PlayMonsterDummy.cpp" />
+    <ClCompile Include="PlayMonsterHelper.cpp" />
+    <ClCompile Include="PlayMonsterNomove.cpp" />
+    <ClCompile Include="PlayMonsterPuppet.cpp" />
+    <ClCompile Include="PlayMonsterRemote.cpp" />
+    <ClCompile Include="PlayMonsterRemoteNomove.cpp" />
+    <ClCompile Include="PlayNeutral.cpp" />
+    <ClCompile Include="PlayNeutralRam.cpp" />
+    <ClCompile Include="PlayNpc.cpp" />
+    <ClCompile Include="PlaySlave.cpp" />
+    <ClCompile Include="ScriptLua.cpp" />
+    <ClCompile Include="ScriptLuaGuildBind.cpp" />
+    <ClCompile Include="ScriptLuaMapBind.cpp" />
+    <ClCompile Include="ScriptLuaMonsterBind.cpp" />
+    <ClCompile Include="ScriptLuaNpcBind.cpp" />
+    <ClCompile Include="ScriptLuaPlayerBind.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SubAchieve.cpp" />
+    <ClCompile Include="SubAction.cpp" />
+    <ClCompile Include="SubFriend.cpp" />
+    <ClCompile Include="SubGift.cpp" />
+    <ClCompile Include="SubItem.cpp" />
+    <ClCompile Include="SubSkill.cpp" />
+    <ClCompile Include="SubStatus.cpp" />
+    <ClCompile Include="SubTask.cpp" />
+    <ClCompile Include="TimerFix.cpp" />
+    <ClCompile Include="TimerFrame.cpp" />
+    <ClCompile Include="TimerSecond.cpp" />
+    <ClCompile Include="ManagerCouple.cpp" />
+    <ClCompile Include="DomainCouple.cpp" />
+    <ClCompile Include="CoupleCouple.cpp" />
+    <ClCompile Include="ManagerTask.cpp" />
+    <ClCompile Include="ManagerTotalAttr.cpp" />
+    <ClCompile Include="ScriptLuaItemBind.cpp" />
+    <ClCompile Include="ManagerStatus.cpp" />
+    <ClCompile Include="cjson\fpconv.c">
+      <Filter>cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="cjson\lua_cjson.c">
+      <Filter>cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="cjson\strbuf.c">
+      <Filter>cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="ManagerMail.cpp" />
+    <ClCompile Include="SubMail.cpp" />
+    <ClCompile Include="ManagerFly.cpp" />
+    <ClCompile Include="ManagerChargeDart.cpp" />
+    <ClCompile Include="ManagerSwordDef.cpp" />
+    <ClCompile Include="zlib\adler32.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\compress.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\crc32.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\deflate.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\gzclose.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\gzlib.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\gzread.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\gzwrite.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\infback.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\inffast.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\inflate.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\inftrees.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\trees.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\uncompr.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\zutil.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayMonsterCaller.cpp" />
+    <ClCompile Include="PlayMonsterExplode.cpp" />
+    <ClCompile Include="PlayMapTrap.cpp" />
+    <ClCompile Include="ManagerConsignment.cpp" />
+    <ClCompile Include="ManagerRelationCache.cpp" />
+    <ClCompile Include="ManagerTrapDef.cpp" />
+    <ClCompile Include="ManagerObjFuncs.cpp" />
+    <ClCompile Include="ScriptLuaSlaveBind.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ConstsString.h" />
+    <ClInclude Include="DomainData.h" />
+    <ClInclude Include="DomainGroup.h" />
+    <ClInclude Include="DomainGuild.h" />
+    <ClInclude Include="DomainPlay.h" />
+    <ClInclude Include="GameServerLib.h" />
+    <ClInclude Include="GameSession.h" />
+    <ClInclude Include="GMCommand.h" />
+    <ClInclude Include="GroupGroup.h" />
+    <ClInclude Include="GuildGuild.h" />
+    <ClInclude Include="ManagerAutoRun.h" />
+    <ClInclude Include="ManagerChart.h" />
+    <ClInclude Include="ManagerDeny.h" />
+    <ClInclude Include="ManagerDenySell.h" />
+    <ClInclude Include="ManagerFilter.h" />
+    <ClInclude Include="ManagerGroup.h" />
+    <ClInclude Include="ManagerGuild.h" />
+    <ClInclude Include="ManagerItemDef.h" />
+    <ClInclude Include="ManagerLevelInfo.h" />
+    <ClInclude Include="ManagerMap.h" />
+    <ClInclude Include="ManagerMonDef.h" />
+    <ClInclude Include="ManagerMonster.h" />
+    <ClInclude Include="ManagerNotice.h" />
+    <ClInclude Include="ManagerSkillDef.h" />
+    <ClInclude Include="PlayActiveObject.h" />
+    <ClInclude Include="PlayAIObject.h" />
+    <ClInclude Include="PlayMap.h" />
+    <ClInclude Include="PlayMapItem.h" />
+    <ClInclude Include="PlayMapObject.h" />
+    <ClInclude Include="PlayMapObjectNode.h" />
+    <ClInclude Include="PlayMonster.h" />
+    <ClInclude Include="PlayMonsterBossNomove.h" />
+    <ClInclude Include="PlayMonsterDummy.h" />
+    <ClInclude Include="PlayMonsterHelper.h" />
+    <ClInclude Include="PlayMonsterNomove.h" />
+    <ClInclude Include="PlayMonsterPuppet.h" />
+    <ClInclude Include="PlayMonsterRemote.h" />
+    <ClInclude Include="PlayMonsterRemoteNomove.h" />
+    <ClInclude Include="PlayNeutral.h" />
+    <ClInclude Include="PlayNeutralRam.h" />
+    <ClInclude Include="PlayNpc.h" />
+    <ClInclude Include="PlaySlave.h" />
+    <ClInclude Include="ScriptLua.h" />
+    <ClInclude Include="ScriptLuaGuildBind.h" />
+    <ClInclude Include="ScriptLuaMapBind.h" />
+    <ClInclude Include="ScriptLuaMonsterBind.h" />
+    <ClInclude Include="ScriptLuaNpcBind.h" />
+    <ClInclude Include="ScriptLuaPlayerBind.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SubAchieve.h" />
+    <ClInclude Include="SubAction.h" />
+    <ClInclude Include="SubFriend.h" />
+    <ClInclude Include="SubGift.h" />
+    <ClInclude Include="SubItem.h" />
+    <ClInclude Include="SubSkill.h" />
+    <ClInclude Include="SubStatus.h" />
+    <ClInclude Include="SubTask.h" />
+    <ClInclude Include="TimerFix.h" />
+    <ClInclude Include="TimerFrame.h" />
+    <ClInclude Include="TimerSecond.h" />
+    <ClInclude Include="UtilFun.h" />
+    <ClInclude Include="ManagerCouple.h" />
+    <ClInclude Include="DomainCouple.h" />
+    <ClInclude Include="CoupleCouple.h" />
+    <ClInclude Include="ManagerTask.h" />
+    <ClInclude Include="UtilString.h" />
+    <ClInclude Include="ManagerTotalAttr.h" />
+    <ClInclude Include="ScriptLuaItemBind.h" />
+    <ClInclude Include="ManagerStatus.h" />
+    <ClInclude Include="cjson\fpconv.h">
+      <Filter>cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="cjson\lua_cjson.h">
+      <Filter>cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="cjson\strbuf.h">
+      <Filter>cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagerMail.h" />
+    <ClInclude Include="SubMail.h" />
+    <ClInclude Include="ManagerFly.h" />
+    <ClInclude Include="ManagerChargeDart.h" />
+    <ClInclude Include="ManagerSwordDef.h" />
+    <ClInclude Include="zlib\crc32.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\deflate.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\gzguts.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\inffast.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\inffixed.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\inflate.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\inftrees.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\trees.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\zconf.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\zlib.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\zutil.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayMonsterCaller.h" />
+    <ClInclude Include="PlayMonsterExplode.h" />
+    <ClInclude Include="PlayMapTrap.h" />
+    <ClInclude Include="ManagerConsignment.h" />
+    <ClInclude Include="ManagerRelationCache.h" />
+    <ClInclude Include="ManagerTrapDef.h" />
+    <ClInclude Include="ManagerObjFuncs.h" />
+    <ClInclude Include="ScriptLuaSlaveBind.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="cjson">
+      <UniqueIdentifier>{9f9b87d6-bf69-43ab-9e1e-6af23c83e44e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zlib">
+      <UniqueIdentifier>{0f9415e9-b908-4565-b4c6-67672404d430}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

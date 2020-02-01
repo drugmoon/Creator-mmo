@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C\7zBuf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\7zBuf2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\7zCrc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\7zFile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\7zStream.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Bcj2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Bra.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Bra86.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\BraIA64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\LzFind.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\LzFindMt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\LzmaDec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\LzmaEnc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\LzmaLib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Threads.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Archive\7z\7zAlloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Archive\7z\7zDecode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Archive\7z\7zExtract.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Archive\7z\7zHeader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Archive\7z\7zIn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Archive\7z\7zItem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C\7zBuf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\7zCrc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\7zFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\7zVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Alloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Bcj2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Bra.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\CpuArch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\LzFind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\LzFindMt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\LzHash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\LzmaDec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\LzmaEnc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\LzmaLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Threads.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Archive\7z\7zAlloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Archive\7z\7zDecode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Archive\7z\7zExtract.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Archive\7z\7zHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Archive\7z\7zIn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C\Archive\7z\7zItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

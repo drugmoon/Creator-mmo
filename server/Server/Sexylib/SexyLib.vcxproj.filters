@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="UDPSession.cpp" />
+    <ClCompile Include="Cryptography.cpp" />
+    <ClCompile Include="DBMssql.cpp" />
+    <ClCompile Include="DBMysql.cpp" />
+    <ClCompile Include="DebugCrash.cpp" />
+    <ClCompile Include="EventQueue.cpp" />
+    <ClCompile Include="EventQueueThread.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="md5.c" />
+    <ClCompile Include="MemoryBlock.cpp" />
+    <ClCompile Include="MemoryPool.cpp" />
+    <ClCompile Include="MonitorIOCP.cpp" />
+    <ClCompile Include="Performance.cpp" />
+    <ClCompile Include="RecvBuffer.cpp" />
+    <ClCompile Include="ServerMain.cpp" />
+    <ClCompile Include="ServiceNT.cpp" />
+    <ClCompile Include="SoftwareKey.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="StreamBlock.cpp" />
+    <ClCompile Include="StreamFix.cpp" />
+    <ClCompile Include="TCPAccept.cpp" />
+    <ClCompile Include="TCPAcceptEventQueue.cpp" />
+    <ClCompile Include="TCPClient.cpp" />
+    <ClCompile Include="TCPConnect.cpp" />
+    <ClCompile Include="TCPConnectEventQueue.cpp" />
+    <ClCompile Include="TCPSession.cpp" />
+    <ClCompile Include="TCPSessionManager.cpp" />
+    <ClCompile Include="TCPSessionMini.cpp" />
+    <ClCompile Include="TimerFix.cpp" />
+    <ClCompile Include="ToolsConsole.cpp" />
+    <ClCompile Include="ToolsHTTP.cpp" />
+    <ClCompile Include="ToolsMemFile.cpp" />
+    <ClCompile Include="ToolsPath.cpp" />
+    <ClCompile Include="ToolsString.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="leudgrid\ActionBase.h" />
+    <ClInclude Include="leudgrid\UDPSession.h" />
+    <ClInclude Include="leudgrid\Application.h" />
+    <ClInclude Include="leudgrid\Cryptography.h" />
+    <ClInclude Include="leudgrid\DBMssql.h" />
+    <ClInclude Include="leudgrid\DBMysql.h" />
+    <ClInclude Include="leudgrid\DebugCrash.h" />
+    <ClInclude Include="leudgrid\DebugLeak.h" />
+    <ClInclude Include="leudgrid\EventBase.h" />
+    <ClInclude Include="leudgrid\EventQueue.h" />
+    <ClInclude Include="leudgrid\EventQueueThread.h" />
+    <ClInclude Include="leudgrid\Logger.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="leudgrid\MemoryBlock.h" />
+    <ClInclude Include="leudgrid\MemoryBlockPRD.h" />
+    <ClInclude Include="leudgrid\MemoryPool.h" />
+    <ClInclude Include="leudgrid\MonitorIOCP.h" />
+    <ClInclude Include="leudgrid\Performance.h" />
+    <ClInclude Include="leudgrid\RecvBuffer.h" />
+    <ClInclude Include="leudgrid\ServerMain.h" />
+    <ClInclude Include="leudgrid\ServiceNT.h" />
+    <ClInclude Include="leudgrid\SoftwareKey.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="leudgrid\StreamBase.h" />
+    <ClInclude Include="leudgrid\StreamBaseEx.h" />
+    <ClInclude Include="leudgrid\StreamBlock.h" />
+    <ClInclude Include="leudgrid\StreamBlockPRD.h" />
+    <ClInclude Include="leudgrid\StreamFix.h" />
+    <ClInclude Include="leudgrid\TCPAccept.h" />
+    <ClInclude Include="leudgrid\TCPAcceptEventQueue.h" />
+    <ClInclude Include="leudgrid\TCPClient.h" />
+    <ClInclude Include="leudgrid\TCPConnect.h" />
+    <ClInclude Include="leudgrid\TCPConnectEventQueue.h" />
+    <ClInclude Include="leudgrid\TCPRecver.h" />
+    <ClInclude Include="leudgrid\TCPSender.h" />
+    <ClInclude Include="leudgrid\TCPSession.h" />
+    <ClInclude Include="leudgrid\TCPSessionManager.h" />
+    <ClInclude Include="leudgrid\TCPSessionMini.h" />
+    <ClInclude Include="leudgrid\TimerFix.h" />
+    <ClInclude Include="leudgrid\ToolsConsole.h" />
+    <ClInclude Include="leudgrid\ToolsDeque.h" />
+    <ClInclude Include="leudgrid\ToolsHTTP.h" />
+    <ClInclude Include="leudgrid\ToolsMemFile.h" />
+    <ClInclude Include="leudgrid\ToolsPath.h" />
+    <ClInclude Include="leudgrid\ToolsString.h" />
+    <ClInclude Include="leudgrid\ToolsThread.h" />
+    <ClInclude Include="leudgrid\ToolsUIDGen.h" />
+    <ClInclude Include="leudgrid\UDPRecver.h" />
+    <ClInclude Include="leudgrid\UDPSender.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="leudgrid\StreamBlock.inl" />
+  </ItemGroup>
+</Project>

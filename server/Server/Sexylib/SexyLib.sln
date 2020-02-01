@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SexyLib", "SexyLib.vcproj", "{A05D8661-B05D-4539-8D24-C21CF3DD12CE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcproj", "{6EF350FB-095F-4DA6-A4CD-B3F120279071}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A05D8661-B05D-4539-8D24-C21CF3DD12CE} = {A05D8661-B05D-4539-8D24-C21CF3DD12CE}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A05D8661-B05D-4539-8D24-C21CF3DD12CE}.Debug.ActiveCfg = Debug|Win32
+		{A05D8661-B05D-4539-8D24-C21CF3DD12CE}.Debug.Build.0 = Debug|Win32
+		{A05D8661-B05D-4539-8D24-C21CF3DD12CE}.Release.ActiveCfg = Release|Win32
+		{A05D8661-B05D-4539-8D24-C21CF3DD12CE}.Release.Build.0 = Release|Win32
+		{6EF350FB-095F-4DA6-A4CD-B3F120279071}.Debug.ActiveCfg = Debug|Win32
+		{6EF350FB-095F-4DA6-A4CD-B3F120279071}.Debug.Build.0 = Debug|Win32
+		{6EF350FB-095F-4DA6-A4CD-B3F120279071}.Release.ActiveCfg = Release|Win32
+		{6EF350FB-095F-4DA6-A4CD-B3F120279071}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

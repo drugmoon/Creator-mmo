@@ -1,0 +1,1 @@
+#占领区编号      地图编号       top_x       top_y       under_x       under_y       left_x	left_y       right_x       right_y

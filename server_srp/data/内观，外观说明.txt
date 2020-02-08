@@ -1,0 +1,1 @@
+人物模型外观，是根据itemdef.csv里面的物品编号对应itemprogram.csv里面的男女外观。

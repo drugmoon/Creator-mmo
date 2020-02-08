@@ -1,0 +1,86 @@
+#类型       时间           脚本
+repet       3600            autorun.PushStartDaysToServer
+#------------------------------------------------------
+
+#皇城战----------------------------------------------
+day			19:50			autorun.noticewarprestart
+day			20:00			autorun.checkwarstart
+day			20:30			autorun.warEightHalfFunc
+day			20:35			autorun.warEightHalfFiveFunc
+day			21:00			autorun.checkwarstop
+
+
+
+#全服双倍经验---------------------------------------------
+#day			16:00			autorun.doubleExp
+#day			17:00			autorun.singleExp
+#day			23:00			autorun.doubleExp
+#day			24:00			autorun.singleExp
+
+
+#元神塔日结算----------------------------------------------
+day			22:59			autorun.checkOutYsAward
+#------------------------------------------------------
+day	    00:01	       autorun.gxxx
+#翅膀祝福值--------------
+day	    06:00	       autorun.wingvalue
+
+#尸王殿怪物刷新---------------------------------------------
+day			15:00			autorun.shiwangopen
+day			15:00			autorun.shiwangupdata
+day			15:05			autorun.shiwangupdata
+day			15:10			autorun.shiwangupdata
+day			15:15			autorun.shiwangupdata
+day			15:20			autorun.shiwangupdata
+day			15:25			autorun.shiwangupdata
+day			15:30			autorun.shiwangclose
+#瑞兽-------------------------------
+day			11:00		    autorun.refreshBoss
+day			11:30		    autorun.clearBoss
+day			18:00		    autorun.refreshActBoss
+day			18:30		    autorun.clearRuiShou
+
+#神威魔狱-------------------------------
+day			10:00		    autorun.shengweiopen
+day			11:00		    autorun.shengweiend
+
+day			14:00		    autorun.shengweiopen
+day			15:00		    autorun.shengweiend
+
+day			22:00		    autorun.shengweiopen
+day			23:00		    autorun.shengweiend
+
+#天下第一-----------------
+day			12:40		    autorun.tianxiadiyiready
+day			12:50		    autorun.tianxiadiyistart
+day			13:20		    autorun.tianxiadiyiend
+#全服双倍经验---------------------------------------------
+day			13:30			autorun.doubleExp
+day			16:30			autorun.singleExp
+day			19:00			autorun.doubleExp
+day			21:00			autorun.singleExp
+#全民押镖时间---------------------------------------------
+day			16:00			autorun.doubleDartopen
+day			16:30			autorun.doubleDartclose
+
+
+#精英阁-----------------
+day			17:00		    autorun.jingyinggestart
+day			17:30		    autorun.jingyinggeclose
+
+#天降赐福-----------------
+day			19:00		    autorun.cifustart
+day			19:20		    autorun.cifuclose
+
+#夜袭沙城-----------------
+day			21:20		    autorun.yxbiqistart
+day			21:40		    autorun.yxbiqiclose
+
+#城主膜拜-----------------
+day			11:30		    autorun.startMoBai
+day			12:30		    autorun.closeMoBai
+day			17:30		    autorun.startMoBai
+day			18:30		    autorun.closeMoBai
+
+#发放俸禄-----------------
+day			10:00		    autorun.sendFengLuToAll

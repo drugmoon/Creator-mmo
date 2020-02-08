@@ -1,0 +1,3 @@
+#v101,,,,,,,,,,,,,,,,,,,,
+#状态编号,名称,等级,素材id,生命上限,魔法上限,物理防御,,魔法防御,,物理攻击,,魔法攻击,,道术攻击,,无视防御,暴击几率,暴击伤害,战力,神圣伤害
+#,,lv,,HPMAX,MPMAX,AC,ACMAX,MAC,MACMAX,DC,DCMAX,MC,MCMAX,SC,SCMAX,nodef,baoji,baoji,fight,holy_damage

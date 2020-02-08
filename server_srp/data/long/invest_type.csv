@@ -1,0 +1,6 @@
+活动类型,货币类型,货币数目,总奖励物品ID,物品数目,活动名称,活动名称图标,总价值,vip等级限制
+ID,MoneyKind,MoneyValue,ItemBaseID,ItemBaseCount,Name,IconName,TotalValue,Vip
+int,int,int,int[],int[],string,string,int,int
+1,102,888,21000002;21000008,90;1,星辉礼包,xinghui,4888,0
+2,102,2888,23140003;23140004,28;1,明月礼包,mingyue,18888,0
+3,102,3000,21010004,30,曜日礼包,yaori,15000,1

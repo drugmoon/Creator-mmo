@@ -1,0 +1,36 @@
+openfunc.csv： 配置功能开放   ----对应服务器lua脚本：moduleGuiButton.lua
+
+wuhunlevel.csv： 配置武魂的数据   服务器脚本：PanelWuHun.lua  客户端打开方式：摇摇乐
+	属性类型->对应属性值
+	[1000]={name = "最大生命值",		index = 2},
+	[1001]={name = "当前生命值",		index = nil},
+	[1002]={name = "最大魔法值",		index = 1},
+	[1003]={name = "当前魔法值",		index = nil},
+	[1004]={name = "最小物攻",			index = 7},
+	[1005]={name = "最大物攻",			index = 8},
+	[1006]={name = "最小魔攻",			index = 9},
+	[1007]={name = "最大魔攻",			index = 10},
+	[1008]={name = "最小道攻",			index = 11},
+	[1009]={name = "最大道攻",			index = 12},
+	[1010]={name = "最小物防",			index = 3},
+	[1011]={name = "最大物防",			index = 4},
+	[1012]={name = "最小魔防",			index = 5},
+	[1013]={name = "最大魔防",			index = 6},
+	[1014]={name = "暴击率",			index = 31},
+	[1015]={name = "暴击值",			index = 32},
+	[1016]={name = "命中",				index = 13},
+	[1017]={name = "闪避",				index = 14},
+	[1018]={name = "幸运",				index = 15},
+	[1019]={name = "神圣攻击",			index = 41},
+	[1020]={name = "神圣防御",			index = 43},
+
+
+wnegInfo.cav: 祝福油各种等级属性的配置
+
+wingdef.csv: 升级翅膀的配置表。
+
+vipShow.csv： 描述各个等级vip信息的。
+
+vip.csv: 描述各个vip等级的奖励和充值配置。
+
+store.csv: 配置的商城道具信息。

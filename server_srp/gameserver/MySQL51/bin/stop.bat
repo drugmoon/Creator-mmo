@@ -1,0 +1,1 @@
+mysqladmin -u root -p --port=9993 shutdown

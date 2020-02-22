@@ -32,19 +32,9 @@ export default class ByteArray extends cc.Component {
 
         }, this);
 
-        MapManager.getInstance().initMap(()=>{
-            cc.log("initMap")
-            for (var i = 0; i < MapManager.getInstance().getBlocklength(); i++)
-            {
-                if (i % (MapManager.getInstance().mlogic_width) == 0 )
-                {
-                    var blocklist = cc.instantiate(this.blocklist)
-                    var sj = blocklist.getComponent("block_list");
-                    this.map.addChild(blocklist);
-                }
-                sj.addBlock(MapManager.getInstance().mBlockData[i], i);
-            }
-        })
+       
+
+
 
 
         BinManager.getInstance().loadBiz(1,2)
@@ -59,5 +49,35 @@ export default class ByteArray extends cc.Component {
         this.map.scale -= 0.1
     }
  
+    loadMap()
+    {
+        //清理
+        this.map.removeAllChildren()
+
+        let loadUrl = cc.find("root/tool/loadUrl").getComponent(cc.EditBox);
+
+        cc.log("loadUrl " + loadUrl.string)
+
+        let url = "resources/map/"+  loadUrl.string + ".mapo"
+
+        MapManager.getInstance().initMap(url,()=>{
+            cc.log("initMap")
+
+            //设置 map 大小
+            this.map.width = MapManager.getInstance().mlogic_width * TILE_WIDTH
+            this.map.height = MapManager.getInstance().mlogic_height * TILE_HEIGHT
+
+            for (var i = 0; i < MapManager.getInstance().getBlocklength(); i++)
+            {
+                if (i % (MapManager.getInstance().mlogic_width) == 0 )
+                {
+                    var blocklist = cc.instantiate(this.blocklist)
+                    var sj = blocklist.getComponent("block_list");
+                    this.map.addChild(blocklist);
+                }
+                sj.addBlock(MapManager.getInstance().mBlockData[i], i);
+            }
+        })
+    }
     // update (dt) {}
 }

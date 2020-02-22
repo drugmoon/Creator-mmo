@@ -31,21 +31,22 @@ export default class NewClass extends cc.Component {
         var sj = block.getComponent("block");
         sj.setBlock(id)
 
-        if (data == 0)
+
+        if ((data & 0x1) != 0)
         {
-            block.color = cc.color(255,255,255)
+            block.color = cc.color(255,0,255) //block
         }
-        else if(data == 1)
+        else if ((data & 0x4) != 0)
         {
-            block.color = cc.color(255,0,255)
+            block.color = cc.color(255,0,255) //WATER
         }
-        else if(data == 2)
+        else if ((data & 0x2) != 0)
         {
-            block.color = cc.color(0,0,255)
+            block.color = cc.color(0,0,255) //WARK
         }
         else
         {
-            block.color = cc.color(255,0,0)
+            block.color = cc.color(255,255,255)
         }
         // for(var i = 0 ; i <  blocks.length; i ++)
         // {

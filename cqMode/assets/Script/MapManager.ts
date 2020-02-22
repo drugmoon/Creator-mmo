@@ -26,9 +26,10 @@ export default class MapManager extends cc.Component {
 
         this._ByteArray.destroy()
     }
-    public initMap(callback: Function){
+    public initMap(url ,callback: Function){
         this._ByteArray = new ByteArray()
-        this._ByteArray.loadData("resources/map/v102.mapo", () => {
+        //"resources/map/v102.mapo"
+        this._ByteArray.loadData(url, () => {
 
             this.initData()
             callback()

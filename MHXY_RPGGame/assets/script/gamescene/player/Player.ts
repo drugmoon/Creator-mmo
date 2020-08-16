@@ -91,15 +91,15 @@ export default class Player extends Character {
         switch(this._direction)
         {
             case 0 : 
-                this.movieClip.rowIndex = 0;
+                this.movieClip.rowIndex = 0;//正面
             break;
 
             case 1 : 
-                this.movieClip.rowIndex = 4;
+                this.movieClip.rowIndex = 4;//右一
             break;
 
             case 2 : 
-                this.movieClip.rowIndex = 1;
+                this.movieClip.rowIndex = 1;//正左
             break;
 
             case 3 : 
@@ -107,7 +107,7 @@ export default class Player extends Character {
             break;
 
             case 4 : 
-                this.movieClip.rowIndex = 3;
+                this.movieClip.rowIndex = 3;//正左左左
             break;
 
             case 5 : 
@@ -115,7 +115,7 @@ export default class Player extends Character {
             break;
 
             case 6 : 
-                this.movieClip.rowIndex = 2;
+                this.movieClip.rowIndex = 2;//正左左
             break;
 
             case 7 : 
@@ -150,7 +150,7 @@ export default class Player extends Character {
             break;
 
             case CharacterState.attack: 
-                this._movieClip = this.node.getChildByName("Body").getChildByName("Skin_Idle").getComponent(MovieClip);
+                this._movieClip = this.node.getChildByName("Body").getChildByName("Skin_Attack").getComponent(MovieClip);
             break;
 
         }

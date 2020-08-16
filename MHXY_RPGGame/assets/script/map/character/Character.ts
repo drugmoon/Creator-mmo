@@ -124,13 +124,16 @@ export default class Character extends cc.Component {
 
     // onLoad () {}
 
+    init() {
+        this.direction = 0;
+        
+    }
     start () {
 
         
         this.node.getChildByName("Body").getChildByName("Skin_Idle").active = false;
         this.node.getChildByName("Body").getChildByName("Skin_Walk").active = false;
-
-        this.direction = 0;
+        if(this.node.getChildByName("Body").getChildByName("Skin_Attack")) this.node.getChildByName("Body").getChildByName("Skin_Attack").active = false;
         this.state = CharacterState.idle;
 
     }
@@ -269,6 +272,11 @@ export default class Character extends cc.Component {
         {
 
         }
+    }
+    
+    public attack()
+    {
+        this.state = CharacterState.attack;
     }
 
     public move()

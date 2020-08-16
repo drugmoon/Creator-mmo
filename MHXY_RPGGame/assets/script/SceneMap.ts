@@ -13,13 +13,19 @@ import { MapLoadModel } from "./map/base/MapLoadModel";
 import MapParams from "./map/base/MapParams";
 import SceneManager from "./SceneManager";
 import GameManager from "./core/GameManager";
+import LogicManager from "./core/LogicManager";
+import MsgManager from "./core/MsgManager";
+import FightManager from "./core/FightManager";
+import DataManager from "./core/DataManager";
 import TransferDoor from "./gamescene/transfer/TransferDoor";
 import SpawnPoint from "./gamescene/transfer/SpawnPoint";
 import Player from "./gamescene/player/Player";
 import RoadSign from "./gamescene/RoadSign";
 import UIManager from "./ui/UIManager";
 import PlotManager from "./plot/PlotManager";
-
+import  Formation ,{ FormationProperty }from "./fight/FormationPosDef"
+import Character, { CharacterState } from "./map/character/Character";
+import {RoleAttributeVo} from "./vo/RoleAttributeVo";
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -57,12 +63,15 @@ export default class SceneMap extends cc.Component {
     @property()
     public isFollowPlayer:boolean = true;
 
-
+    @property(cc.Label)
+    public pos:cc.Label = null;
     /**
      * 玩家自己
      */
     public player:Player = null;
 
+    public players_self:Player[] = [];//自己人
+    public players_foe:Player[] = []; //敌人
     /**
      * 场景里所有的传送门
      */

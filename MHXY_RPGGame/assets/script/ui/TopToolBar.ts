@@ -11,7 +11,7 @@
 import SceneMap from "../SceneMap";
 import Player, { ControlMode } from "../gamescene/player/Player";
 import GameManager from "../core/GameManager";
-
+import { EventMgr }  from "../common/EventManager";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -22,6 +22,12 @@ export default class TopToolBar extends cc.Component {
 
     @property(cc.Button)
     swBtn: cc.Button = null;
+
+    @property(cc.Button)
+    JoinBtn: cc.Button = null;
+
+    @property(cc.Button)
+    AttackBtn: cc.Button = null;
 
     private playerIndex:number = 0;
 
@@ -71,6 +77,15 @@ export default class TopToolBar extends cc.Component {
 
             lastPlayer.node.destroy();
 
+        });
+
+        this.JoinBtn.node.on(cc.Node.EventType.TOUCH_START,(event:cc.Event.EventTouch)=>
+        {
+            EventMgr.raiseEvent("Ack_JoinFight", "ABCD");
+        });
+        this.AttackBtn.node.on(cc.Node.EventType.TOUCH_START,(event:cc.Event.EventTouch)=>
+        {
+            EventMgr.raiseEvent("Ack_FightAction", "AAAA");
         });
 
     }

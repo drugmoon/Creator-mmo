@@ -8,6 +8,8 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
+import { EventMgr }  from "../../common/EventManager";
+import { EventType } from "../../common/EventType"; 
 
 const {ccclass, property} = cc._decorator;
 
@@ -193,6 +195,9 @@ export default class MovieClip extends cc.Component {
         if (this.playTimes != 0 && this.currentTimes == this.playTimes)
         {
             this.running = false;
+            this.playIndex = 0;//reset
+            this.currentFrame = 0;
+            EventMgr.raiseEvent(EventType.playActionFinish, "");
             return;
         }
             
@@ -268,6 +273,12 @@ export default class MovieClip extends cc.Component {
         //this.m_sprite.spriteFrame.setRect(this.rect);
 
         this._playIndex++;
+    }
+
+    //播发一次
+    public playActionOnce()
+    {
+        this.playTimes = 1;
     }
 
     /// <summary>

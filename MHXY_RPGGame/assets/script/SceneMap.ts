@@ -26,6 +26,7 @@ import PlotManager from "./plot/PlotManager";
 import  Formation ,{ FormationProperty }from "./fight/FormationPosDef"
 import Character, { CharacterState } from "./map/character/Character";
 import {RoleAttributeVo} from "./vo/RoleAttributeVo";
+import {FightInfoVo, AttackType} from "./vo/FightInfoVo";
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -101,6 +102,7 @@ export default class SceneMap extends cc.Component {
 
     private roadSign:RoadSign = null;
 
+    fightState:boolean = false;
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () 
@@ -116,6 +118,15 @@ export default class SceneMap extends cc.Component {
         this.transforDoors = this.getComponentsInChildren(TransferDoor);
         this.spawnPoints = this.getComponentsInChildren(SpawnPoint);
 
+        //1. 数据管理
+        DataManager.instance.init();
+        //2. 逻辑管理
+        LogicManager.instance.init();
+        //3. 通讯管理
+        MsgManager.instance.init();
+        //4. 战斗管理
+        FightManager.instance.init();
+
         if(SceneManager.instance.currentMapId != 0)
         {
 
@@ -129,7 +140,7 @@ export default class SceneMap extends cc.Component {
                 },2.5);
             }
 
-            this.player = GameManager.instance.getPlayer(1);
+            this.player = GameManager.instance.getPlayer(10);
             this.player.node.parent = this.entityLayer.node;
             this.player.controlMode = GameManager.instance.controllMode;
 
@@ -145,11 +156,13 @@ export default class SceneMap extends cc.Component {
                 SceneManager.instance.mapLoadModel,
                 );
         }
+
+        //
     }
 
     public init(mapData:MapData,bgTex:cc.Texture2D,mapLoadModel:MapLoadModel = 1)
     {
- 
+
         this.isInit = true;
 
         MapRoadUtils.instance.updateMapInfo(mapData.mapWidth,mapData.mapHeight,mapData.nodeWidth,mapData.nodeHeight,mapData.type);
@@ -210,6 +223,101 @@ export default class SceneMap extends cc.Component {
 
     }
 
+    public initFightScene() 
+    {
+        //默认读取第一个阵法站位
+        let FormationPos:FormationProperty = Formation.instance.FormationPos[0];
+
+        let SelfArray:RoleAttributeVo[] = DataManager.instance.playersSelf
+
+        let FoeArray:RoleAttributeVo[] = DataManager.instance.playersFoe
+
+        for (let i = 0 ; i < SelfArray.length; i++)
+        {
+            //角色在阵法所在位置
+            let pos = FormationPos.self[i] ;
+
+            //设置模型
+            this.players_self[i] = GameManager.instance.getPlayer( SelfArray[i]._PlayerID);
+            this.players_self[i].node.parent = this.entityLayer.node;
+            this.players_self[i].controlMode = GameManager.instance.controllMode;
+            this.players_self[i].node.position =  cc.v2( pos[0] ,   pos[1] )//spawnPoint.node.position;
+
+            //方向设置
+            this.players_self[i].direction = 0;
+
+            //默认将第一个设置为自己
+            if (i == 0)
+            {
+                this.player = this.players_self[i]
+            }
+        }
+
+        //敌方
+        // for (let i = 0 ; i < FoeArray.length; i++)
+        // {
+        //     //角色在阵法所在位置
+        //     let pos = FormationPos.foe[i] ;
+
+        //     //设置模型
+        //     this.players_foe[i] = GameManager.instance.getPlayer(FoeArray[i]._PlayerID);
+        //     this.players_foe[i].node.parent = this.entityLayer.node;
+        //     this.players_foe[i].controlMode = GameManager.instance.controllMode;
+        //     this.players_foe[i].node.position =  cc.v2( pos[0] ,   pos[1] )//spawnPoint.node.position;
+
+        //     //方向设置
+        //     this.players_foe[i].direction = 0;
+        // }
+
+
+        //this.setViewToPlayer();
+    }
+    //清理战斗场景
+    cleanFightScene()
+    {
+        for (let i = 0 ; i < this.players_self.length; i++)
+        {
+            this.players_self[i].node.destroy();
+        }
+        //敌方
+        for (let i = 0 ; i < this.players_foe.length; i++)
+        {
+            this.players_foe[i].node.destroy();
+        }
+    }
+    actionFightScene()
+    {
+        let fightInfoVo:FightInfoVo[] = DataManager.instance._fightInfoVo;
+
+        //敌方
+        for (let i = 0 ; i < fightInfoVo.length; i++)
+        {
+            this.actionFight(fightInfoVo[i]);
+        }
+    }
+    actionFight(fightInfoVo:FightInfoVo) {
+        
+        console.log("actionFight ");
+        //1. 攻击类型
+        if (fightInfoVo._Type == AttackType.Att_None)
+        {
+            //
+            for (let i = 0 ; i < this.players_self.length; i++)
+            {
+                let player:Player = this.players_self[i];
+                player.attack();
+
+                //测试 使用一条信息就删除掉
+                DataManager.instance._fightInfoVo = [];
+                console.log("player.attack() ");
+            }
+        }
+    }
+    actionIdle()
+    {
+        let player:Player = this.players_self[0];
+        player.stop();
+    }
     /**
      * 根据像素坐标获得地图节点
      * @param px 

@@ -41,13 +41,11 @@ export default class Formation {
 
     private init():void
     {
-      
         let forma = new FormationProperty();
         forma.self         = [[705,135],[700,230],[595,160],[750,270],[530,130]];
         forma.self_monster = [[100,100],[150,150],[200,200],[250,250],[300,300]];
-        forma.foe          = [[100,100],[150,150],[200,200],[250,250],[300,300]];
+        forma.foe          = [[500,100],[150,150],[200,200],[250,250],[300,300]];
         forma.foe_monster  = [[100,100],[150,150],[200,200],[250,250],[300,300]];
-         
        // for(let i = 0; i < 1; i++)
         {
             this.FormationPos[0] = forma;

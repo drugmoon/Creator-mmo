@@ -12,6 +12,7 @@ import SceneMap from "../SceneMap";
 import Player, { ControlMode } from "../gamescene/player/Player";
 import GameManager from "../core/GameManager";
 import { EventMgr }  from "../common/EventManager";
+import { EventType } from "../common/EventType"; 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -26,6 +27,9 @@ export default class TopToolBar extends cc.Component {
     @property(cc.Button)
     JoinBtn: cc.Button = null;
 
+    @property(cc.Button)
+    LeaveBtn: cc.Button = null;
+    
     @property(cc.Button)
     AttackBtn: cc.Button = null;
 
@@ -81,12 +85,22 @@ export default class TopToolBar extends cc.Component {
 
         this.JoinBtn.node.on(cc.Node.EventType.TOUCH_START,(event:cc.Event.EventTouch)=>
         {
-            EventMgr.raiseEvent("Ack_JoinFight", "ABCD");
+            EventMgr.raiseEvent(EventType.Ack_JoinFight, "ABCD");
         });
+
         this.AttackBtn.node.on(cc.Node.EventType.TOUCH_START,(event:cc.Event.EventTouch)=>
         {
-            EventMgr.raiseEvent("Ack_FightAction", "AAAA");
+            EventMgr.raiseEvent(EventType.Ack_FightAction, "AAAA");
+            //EventMgr.raiseEvent(EventType.Req_cmd_Attack, "AA");
         });
+
+        this.LeaveBtn.node.on(cc.Node.EventType.TOUCH_START,(event:cc.Event.EventTouch)=>
+        {
+           // EventMgr.raiseEvent(EventType.Ack_LeaveFight, "ABCD");
+
+            SceneMap.instance.actionIdle();
+        });
+
 
     }
 

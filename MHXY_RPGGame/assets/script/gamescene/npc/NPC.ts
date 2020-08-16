@@ -110,57 +110,58 @@ export default class NPC extends Character {
         this.node.width = 100;
         this.node.height = 100;
 
-        if(this.npcId != 0)
-        {
-            cc.loader.loadRes("game/npc/" + this.npcId, cc.Texture2D,(error:Error,tex:cc.Texture2D)=>
-            {
-                this.movieClip.texture = tex;
-                this.movieClip.node.active = true;
+        //隐藏NPC
+        // if(this.npcId != 0)
+        // {
+        //     cc.loader.loadRes("game/npc/" + this.npcId, cc.Texture2D,(error:Error,tex:cc.Texture2D)=>
+        //     {
+        //         this.movieClip.texture = tex;
+        //         this.movieClip.node.active = true;
 
-                this.scheduleOnce(()=>{
+        //         this.scheduleOnce(()=>{
 
-                    this.node.width = this.movieClip.node.width;
-                    this.node.height = this.movieClip.node.height;
+        //             this.node.width = this.movieClip.node.width;
+        //             this.node.height = this.movieClip.node.height;
 
-                },0.1)
+        //         },0.1)
 
-            });
-        }
+        //     });
+        // }
 
-        this.state = CharacterState.idle;
+        // this.state = CharacterState.idle;
 
     }
 
     update (dt) 
     {
-        if(!SceneMap.instance)
-        {
-            return;
-        }
+        // if(!SceneMap.instance)
+        // {
+        //     return;
+        // }
 
-        super.update(dt);
+        // super.update(dt);
 
-        if(SceneManager.instance.currentMapId == 0)
-        {
-            return;
-        }
+        // if(SceneManager.instance.currentMapId == 0)
+        // {
+        //     return;
+        // }
 
-        if(this.isPatrol)
-        {
+        // if(this.isPatrol)
+        // {
 
-            this.timer -= dt;
+        //     this.timer -= dt;
 
-            if(this.timer <= 0)
-            {
-                this.timer = this.Range(1.5 , 4);
+        //     if(this.timer <= 0)
+        //     {
+        //         this.timer = this.Range(1.5 , 4);
 
-                this.targetPos.x = this.basePos.x + this.Range(-this.patrolRange , this.patrolRange);
-                this.targetPos.y = this.basePos.y + this.Range(-this.patrolRange , this.patrolRange);
+        //         this.targetPos.x = this.basePos.x + this.Range(-this.patrolRange , this.patrolRange);
+        //         this.targetPos.y = this.basePos.y + this.Range(-this.patrolRange , this.patrolRange);
                 
-                this.patrol(this.targetPos.x,this.targetPos.y);
+        //         this.patrol(this.targetPos.x,this.targetPos.y);
 
-            }
-        }
+        //     }
+        // }
 
     }
 

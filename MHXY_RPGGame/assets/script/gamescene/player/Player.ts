@@ -17,6 +17,8 @@ import RoadNode from "../../map/road/RoadNode";
 import SceneMap from "../../SceneMap";
 import Character, { CharacterState } from "../../map/character/Character";
 import MovieClip from "../../map/character/MovieClip";
+import { EventMgr }  from "../../common/EventManager";
+import { EventType } from "../../common/EventType"; 
 
 const {ccclass, property} = cc._decorator;
 
@@ -154,13 +156,24 @@ export default class Player extends Character {
             break;
 
         }
-
+        console.log("set _state ", this._state);
         
         this.direction = this._direction;
         this._movieClip.node.active = true;
         this._movieClip.playIndex = 0;
-        this._movieClip.playAction();
 
+        //如果是攻击只播发一次
+        if(this._state == CharacterState.attack)
+        {
+            this._movieClip.playTimes = 0;
+            this._movieClip.play();
+            this._movieClip.reset();
+            this._movieClip.playActionOnce();
+        }
+        else
+        {
+            this._movieClip.playAction();
+        }
     }
 
     private _lastStandNode:RoadNode = null;
@@ -175,8 +188,18 @@ export default class Player extends Character {
     }
 
     start () {
-       
+    
         super.start();
+
+        EventMgr.addEventListener(EventType.playActionFinish, ()=>{
+            console.log("RecvActionMessage");
+            //动作完成后切换状态
+            this._movieClip.playTimes = 0;
+            this.stop();
+            //this._movieClip.reset();
+            this._movieClip.play();
+        })
+        
     }
 
     update(dt)

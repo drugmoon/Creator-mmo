@@ -15,6 +15,9 @@ export class RoleAttributeVo
     /** 角色模型 */
     public _PlayerID:number=0;
 
+    //所在队伍位置
+    public _Idx:number = 0;
+
     public _Hp:number=100;
     public _Mp:number=100;
     public _Exp:number=0;

@@ -15,6 +15,7 @@ import  Formation ,{ FormationProperty } from "../fight/FormationPosDef"
 import GameManager from "../core/GameManager";
 import RoadSign from "../gamescene/RoadSign";
 import {RoleAttributeVo} from "../vo/RoleAttributeVo";
+import {FightInfoVo} from "../vo/FightInfoVo";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -35,6 +36,7 @@ export default class DataManager extends cc.Component {
     public playersSelf:RoleAttributeVo[] = []; //自己人
     public playersFoe:RoleAttributeVo[] = []; //敌人
 
+    public _fightInfoVo:FightInfoVo[] = []; //战斗信息
 
     // /** role数据 */
     // private playersSelfMap: Map<number, RoleAttributeVo> = new Map();
@@ -71,10 +73,18 @@ export default class DataManager extends cc.Component {
         //人物角色id 装备信息物品  宠物信息
         //hp mp
         // let forma:FormationProperty = Formation.instance.FormationPos[0];
+        console.log("setDataJoinFight ");
 
-        this.playersSelf[0]._PlayerID = 11;
-        
-        this.playersFoe[0]._PlayerID = 11;
+        let RoleAttr_S = new RoleAttributeVo;
+        RoleAttr_S._ID = 1001;
+        RoleAttr_S._PlayerID = 10;
+
+        let RoleAttr_F = new RoleAttributeVo;
+        RoleAttr_F._ID = 1002;
+        RoleAttr_F._PlayerID = 10;
+
+        this.playersSelf[RoleAttr_S._Idx] = RoleAttr_S;
+        this.playersFoe[RoleAttr_F._Idx] = RoleAttr_F;
         // for(var i:number = 0 ; i < 1 ; i++)
         // {
         //     let pos = forma.self[i] ;
@@ -101,6 +111,30 @@ export default class DataManager extends cc.Component {
     }
     public  setDataFightAction(){
 
+        //  A > B
+        //A攻击B
+        //a 攻击动作
+        //b 受伤动作
+        console.log("setDataFightAction ");
+
+        let fightInfoVo = new FightInfoVo;
+
+        //A>B  B hp - 999
+        fightInfoVo._ID_Att = 1001;
+        fightInfoVo._ID_Def = 1002;
+
+        //普通攻击
+        fightInfoVo._Type = 0;
+
+        //Hp
+        fightInfoVo._Hp_att = 0;
+        fightInfoVo._Hp_def = -999;
+
+        //Mp
+        fightInfoVo._Mp_att = 0;
+        fightInfoVo._Mp_def = 0;
+
+        this._fightInfoVo.push(fightInfoVo);
     }
 
     /*start () {

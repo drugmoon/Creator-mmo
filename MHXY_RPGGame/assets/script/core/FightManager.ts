@@ -12,6 +12,9 @@
 
 import Player, { ControlMode } from "../gamescene/player/Player";
 import RoadSign from "../gamescene/RoadSign";
+import { EventMgr }  from "../common/EventManager";
+import { EventType } from "../common/EventType"; 
+import SceneMap from "../SceneMap";
 
 const {ccclass, property} = cc._decorator;
 
@@ -62,9 +65,43 @@ export default class FightManager extends cc.Component {
 
     public init()
     {
+        this.Listener();
+    }
+    public Listener(){
+        //接受到进入战斗消息 基础信息
+        // Req_JoinFight
+        EventMgr.addEventListener(EventType.Ack_JoinFight,this.recvMsg)
+
+        //离开战斗 基础信息
+        // Req_LeaveFight
+        EventMgr.addEventListener(EventType.Ack_LeaveFight,this.recvMsg)
+
+        //战斗动作
+        //Req_FightAction
+        //
+        EventMgr.addEventListener(EventType.Ack_FightAction,this.recvMsg)
+    }
+    public recvMsg(Event,target){
+
+        console.log("Event ", Event);
+        console.log("recvMsg ", target);
+        switch(Event)
+        {
+            case EventType.Ack_JoinFight:
+                SceneMap.instance.initFightScene();
+            break;
+
+            case EventType.Ack_FightAction: 
+                SceneMap.instance.actionFightScene();
+            break;
+            
+            case EventType.Ack_LeaveFight: 
+                SceneMap.instance.cleanFightScene();
+            break;
+            
+        }
 
     }
-
 	public Tick(time)
 	{	//时间加速
 		//time *= speed;
@@ -131,9 +168,9 @@ export default class FightManager extends cc.Component {
 	// {
 	// 	this.fightState = state;
 	// }
-    /*start () {
+    start () {
 
-    }*/
+    }
 
     // update (dt) {}
 }

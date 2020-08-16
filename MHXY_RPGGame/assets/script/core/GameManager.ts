@@ -72,6 +72,8 @@ export default class GameManager extends cc.Component {
         player.node.position = cc.Vec2.ZERO;
         player.roleId = roleId;
         player.node.active = true;
+        player.init();
+        console.log("======creat play");
         return player;
     }
 

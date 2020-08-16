@@ -11,6 +11,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import { EventMgr }  from "../common/EventManager";
+import { EventType } from "../common/EventType"; 
 import LogicManager from "./LogicManager"
 import DataManager from "./DataManager";
 const {ccclass, property} = cc._decorator;
@@ -46,36 +47,39 @@ export default class MsgManager extends cc.Component {
 
     public Listener(){
 
-        
         //接受到进入战斗消息 基础信息
         // Req_JoinFight
-        EventMgr.addEventListener("Ack_JoinFight",this.recvMsg,1)
+        EventMgr.addEventListener(EventType.Ack_JoinFight,this.recvMsg)
+
+        //离开战斗 基础信息
+        // Req_LeaveFight
+        EventMgr.addEventListener(EventType.Ack_LeaveFight,this.recvMsg)
 
         //战斗动作
         //Req_FightAction
-
         //
-        EventMgr.addEventListener("Ack_FightAction",this.recvMsg,2)
-        
-
+        EventMgr.addEventListener(EventType.Ack_FightAction,this.recvMsg)
     }
 
     public sendMsg(){
 
     }
-    public recvMsg(target){
+    public recvMsg(Event,target){
 
-        switch(target)
+        console.log("Event ", Event);
+        console.log("recvMsg ", target);
+        switch(Event)
         {
-            case 1:
+            case EventType.Ack_JoinFight:
                 DataManager.instance.setDataJoinFight();
             break;
 
-            case 2: 
+            case EventType.Ack_FightAction: 
                 DataManager.instance.setDataFightAction();
             break;
-        
-
+            case EventType.Ack_LeaveFight: 
+                ;
+            break;
         }
 
     }

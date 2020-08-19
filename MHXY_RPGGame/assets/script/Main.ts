@@ -33,6 +33,7 @@ export default class Main extends cc.Component {
 
         SceneManager.instance.loadMap(10001,1,MapLoadModel.slices);
 
+       // SceneManager.instance.loadMap(9999,1,MapLoadModel.single);
     }
 
     // update (dt) {}

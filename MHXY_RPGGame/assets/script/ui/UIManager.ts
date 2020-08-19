@@ -9,7 +9,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import Joystick from "../gamescene/player/Joystick";
-
+import BattlePanel from "../ui/BattlePanel"
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -27,6 +27,9 @@ export default class UIManager extends cc.Component {
 
     @property(Joystick)
     public joystick:Joystick = null;
+
+    @property(cc.Node)
+    public battlePanel: cc.Node = null;
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -51,7 +54,11 @@ export default class UIManager extends cc.Component {
     {
         this.node.active = false;
     }
-
+    public initFightScene() {
+        this.battlePanel.active = true;
+        let battlePanel  = this.battlePanel.getComponent(BattlePanel);
+        battlePanel.init();
+    }
 
     // update (dt) {}
 }

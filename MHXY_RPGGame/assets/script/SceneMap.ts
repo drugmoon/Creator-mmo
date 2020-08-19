@@ -27,6 +27,7 @@ import  Formation ,{ FormationProperty }from "./fight/FormationPosDef"
 import Character, { CharacterState } from "./map/character/Character";
 import {RoleAttributeVo} from "./vo/RoleAttributeVo";
 import {FightInfoVo, AttackType} from "./vo/FightInfoVo";
+import BattlePanel from "./ui/BattlePanel"
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -66,6 +67,7 @@ export default class SceneMap extends cc.Component {
 
     @property(cc.Label)
     public pos:cc.Label = null;
+
     /**
      * 玩家自己
      */
@@ -225,33 +227,34 @@ export default class SceneMap extends cc.Component {
 
     public initFightScene() 
     {
+        UIManager.instance.initFightScene();
         //默认读取第一个阵法站位
-        let FormationPos:FormationProperty = Formation.instance.FormationPos[0];
+        // let FormationPos:FormationProperty = Formation.instance.FormationPos[0];
 
-        let SelfArray:RoleAttributeVo[] = DataManager.instance.playersSelf
+        // let SelfArray:RoleAttributeVo[] = DataManager.instance.ownsideTeamVo
 
-        let FoeArray:RoleAttributeVo[] = DataManager.instance.playersFoe
+        // let FoeArray:RoleAttributeVo[] = DataManager.instance.hostileTeamVo
 
-        for (let i = 0 ; i < SelfArray.length; i++)
-        {
-            //角色在阵法所在位置
-            let pos = FormationPos.self[i] ;
+        // for (let i = 0 ; i < SelfArray.length; i++)
+        // {
+        //     //角色在阵法所在位置
+        //     let pos = FormationPos.self[i] ;
 
-            //设置模型
-            this.players_self[i] = GameManager.instance.getPlayer( SelfArray[i]._PlayerID);
-            this.players_self[i].node.parent = this.entityLayer.node;
-            this.players_self[i].controlMode = GameManager.instance.controllMode;
-            this.players_self[i].node.position =  cc.v2( pos[0] ,   pos[1] )//spawnPoint.node.position;
+        //     //设置模型
+        //     this.players_self[i] = GameManager.instance.getPlayer( SelfArray[i]._PlayerID);
+        //     this.players_self[i].node.parent = this.entityLayer.node;
+        //     this.players_self[i].controlMode = GameManager.instance.controllMode;
+        //     this.players_self[i].node.position =  cc.v2( pos[0] ,   pos[1] )//spawnPoint.node.position;
 
-            //方向设置
-            this.players_self[i].direction = 0;
+        //     //方向设置
+        //     this.players_self[i].direction = 0;
 
-            //默认将第一个设置为自己
-            if (i == 0)
-            {
-                this.player = this.players_self[i]
-            }
-        }
+        //     //默认将第一个设置为自己
+        //     if (i == 0)
+        //     {
+        //         this.player = this.players_self[i]
+        //     }
+        // }
 
         //敌方
         // for (let i = 0 ; i < FoeArray.length; i++)
@@ -305,7 +308,14 @@ export default class SceneMap extends cc.Component {
             for (let i = 0 ; i < this.players_self.length; i++)
             {
                 let player:Player = this.players_self[i];
-                player.attack();
+
+                //1.显示攻击技能 
+                //2.移动到目标位置
+                //player.move();
+                //3.播发攻击动作 被攻击动作
+                this.movePlayer(player.node.x + 100, player.node.y + 100, player);
+
+               // player.attack();
 
                 //测试 使用一条信息就删除掉
                 DataManager.instance._fightInfoVo = [];
@@ -436,9 +446,19 @@ export default class SceneMap extends cc.Component {
         * @param targetY 移到到的目标点y
         * 
         */	
-    public movePlayer(targetX:number,targetY:number,mapStep:number = 1000)
+    public movePlayer(targetX:number,targetY:number,player:Player = null,mapStep:number = 1000)
     {
-        var startPoint:Point = MapRoadUtils.instance.getWorldPointByPixel(this.player.node.x,this.player.node.y);
+        //设置玩家移动的位置
+        let pos:Point
+        if (player == null)
+        {
+            pos = new Point(this.player.node.x,this.player.node.y);
+        }
+        else
+        {
+            pos = new Point(player.node.x,player.node.y);
+        }
+        var startPoint:Point = MapRoadUtils.instance.getWorldPointByPixel(pos.x,pos.y);
         var targetPoint:Point = MapRoadUtils.instance.getWorldPointByPixel(targetX,targetY);
 
         var startNode:RoadNode = this.getMapNodeByWorldPoint(startPoint.x,startPoint.y); 
@@ -449,11 +469,18 @@ export default class SceneMap extends cc.Component {
 
         if(roadNodeArr.length > 0)
         {
-            this.player.walkByRoad(roadNodeArr);
+            if (player == null)
+            {
+                this.player.walkByRoad(roadNodeArr);
+            }
+            else
+            {
+                player.walkByRoad(roadNodeArr);
+            }
+            
         }
     }
-
-
+ 
     /**
      *把视野定位到给定位置 
     * @param px

@@ -33,24 +33,24 @@ export default class DataManager extends cc.Component {
 
     // public players_self:Player[] = [];//自己人
     // public players_foe:Player[] = []; //敌人
-    public playersSelf:RoleAttributeVo[] = []; //自己人
-    public playersFoe:RoleAttributeVo[] = []; //敌人
+    public ownsideTeamVo:RoleAttributeVo[] = []; //自己人
+    public hostileTeamVo:RoleAttributeVo[] = []; //敌人
 
     public _fightInfoVo:FightInfoVo[] = []; //战斗信息
 
     // /** role数据 */
-    // private playersSelfMap: Map<number, RoleAttributeVo> = new Map();
+    // private ownsideTeamVoMap: Map<number, RoleAttributeVo> = new Map();
     // /** role数据 */
-    // public get PlayersSelfMap(): Map<number, RoleAttributeVo>
+    // public get ownsideTeamVoMap(): Map<number, RoleAttributeVo>
     // {
-    //     return this.playersSelfMap;
+    //     return this.ownsideTeamVoMap;
     // }
     // /** role数据 */
-    // private playersFoefMap: Map<number, RoleAttributeVo> = new Map();
+    // private hostileTeamVofMap: Map<number, RoleAttributeVo> = new Map();
     // /** role数据 */
-    // public get PlayersFoefMap(): Map<number, RoleAttributeVo>
+    // public get hostileTeamVofMap(): Map<number, RoleAttributeVo>
     // {
-    //     return this.playersFoefMap;
+    //     return this.hostileTeamVofMap;
     // }
 
     onLoad () 
@@ -83,8 +83,8 @@ export default class DataManager extends cc.Component {
         RoleAttr_F._ID = 1002;
         RoleAttr_F._PlayerID = 10;
 
-        this.playersSelf[RoleAttr_S._Idx] = RoleAttr_S;
-        this.playersFoe[RoleAttr_F._Idx] = RoleAttr_F;
+        this.ownsideTeamVo[RoleAttr_S._Idx] = RoleAttr_S;
+        this.hostileTeamVo[RoleAttr_F._Idx] = RoleAttr_F;
         // for(var i:number = 0 ; i < 1 ; i++)
         // {
         //     let pos = forma.self[i] ;

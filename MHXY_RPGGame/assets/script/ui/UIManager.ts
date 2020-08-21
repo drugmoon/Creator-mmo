@@ -28,9 +28,13 @@ export default class UIManager extends cc.Component {
     @property(Joystick)
     public joystick:Joystick = null;
 
-    @property(cc.Node)
-    public battlePanel: cc.Node = null;
+    @property(cc.Prefab)
+    public battlePanelPrefab: cc.Prefab = null;
 
+    @property(cc.Node)
+    public battlePanelNode:cc.Node = null;
+    
+    public battlePanel:BattlePanel = null;
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () 
@@ -53,12 +57,33 @@ export default class UIManager extends cc.Component {
     public init()
     {
         this.node.active = false;
-    }
-    public initFightScene() {
-        this.battlePanel.active = true;
-        let battlePanel  = this.battlePanel.getComponent(BattlePanel);
-        battlePanel.init();
+
+
     }
 
+    public initBattlePanel()
+    {
+        let node:cc.Node = cc.instantiate(this.battlePanelPrefab);
+        this.battlePanel = node.getComponent(BattlePanel);
+
+        this.battlePanelNode.addChild(this.battlePanel.node);
+    }
+
+    public initFightScene() {
+
+        this.initBattlePanel();
+        this.battlePanel.init();
+    }
+
+    public BattleCommand(){
+
+        this.battlePanel.BattleCommand();
+    }
+
+    public cleanFightScene()
+    {
+        this.battlePanel.node.removeAllChildren();
+        //this.battlePanel.reomovPlayer();
+    }
     // update (dt) {}
 }

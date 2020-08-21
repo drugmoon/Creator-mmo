@@ -37,7 +37,7 @@ export default class CommandInterpreter {
         this.battlePanel.setBattleMessage("#Y" + "进行了攻击#18");
 
         //移动到目录位置
-        //this.battlePanel.rush(source, target.getLocation().x,target.getLocation().y,"");
+        this.battlePanel.rush(source, target.getLocation().x,target.getLocation().y,"");
 
 
     }

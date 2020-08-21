@@ -52,9 +52,11 @@ export default class BattlePanel extends cc.Component {
         this.commandManager = new CommandManager(this);
         this.setOwnsideTeam();
         this.setHostileTeam();
-
-        this.attackCmd();
-    }
+	}
+	public BattleCommand()
+	{
+		this.attackCmd();
+	}
     /**
 	 * 已方团队
 	 * 
@@ -273,6 +275,28 @@ export default class BattlePanel extends cc.Component {
     // battlePanel.initComponetn();
     // update (dt) {}
 
+	/**
+	 * 移除指定
+	 * 
+	 * @param players
+	 */
+	public reomovPlayer() {
+		//players:Player
+
+		for (let i = 0; i < this.ownsideTeam.length; i++) {
+			this.ownsideTeam[i].node.removeAllChildren();
+		}	
+
+		for (let i = 0; i < this.hostileTeam.length; i++) {
+			this.hostileTeam[i].node.removeAllChildren();
+		}
+		
+
+		//this.node.removeAllChildren();
+		// this.ownsideTeam.remove(players);
+		// this.hostileTeam.remove(players);
+		// super.romveNpc(players);
+	}
     public hidePanel() {
 		// getUIHelp().hidePanel(BATTLE_ROLE_WARMAGIC);
 		// getUIHelp().hidePanel(BATTLE_ROLE_PROP);

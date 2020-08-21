@@ -144,7 +144,7 @@ export default class SceneMap extends cc.Component {
 
             this.player = GameManager.instance.getPlayer(10);
             this.player.node.parent = this.entityLayer.node;
-            this.player.controlMode = GameManager.instance.controllMode;
+         //   this.player.controlMode = GameManager.instance.controllMode;
 
             var spawnPoint:SpawnPoint = this.getSpawnPoint(SceneManager.instance.enterSpawnId);
 
@@ -227,6 +227,7 @@ export default class SceneMap extends cc.Component {
 
     public initFightScene() 
     {
+        console.log("SceneMap initFightScene");
         UIManager.instance.initFightScene();
         //默认读取第一个阵法站位
         // let FormationPos:FormationProperty = Formation.instance.FormationPos[0];
@@ -275,6 +276,7 @@ export default class SceneMap extends cc.Component {
 
         //this.setViewToPlayer();
     }
+ 
     //清理战斗场景
     cleanFightScene()
     {
@@ -290,13 +292,15 @@ export default class SceneMap extends cc.Component {
     }
     actionFightScene()
     {
-        let fightInfoVo:FightInfoVo[] = DataManager.instance._fightInfoVo;
+        // let fightInfoVo:FightInfoVo[] = DataManager.instance._fightInfoVo;
 
-        //敌方
-        for (let i = 0 ; i < fightInfoVo.length; i++)
-        {
-            this.actionFight(fightInfoVo[i]);
-        }
+        // //敌方
+        // for (let i = 0 ; i < fightInfoVo.length; i++)
+        // {
+        //     this.actionFight(fightInfoVo[i]);
+        // }
+ 
+        UIManager.instance.BattleCommand();
     }
     actionFight(fightInfoVo:FightInfoVo) {
         
@@ -322,6 +326,10 @@ export default class SceneMap extends cc.Component {
                 console.log("player.attack() ");
             }
         }
+    }
+    LeaveBattle()
+    {
+        UIManager.instance.cleanFightScene();
     }
     actionIdle()
     {

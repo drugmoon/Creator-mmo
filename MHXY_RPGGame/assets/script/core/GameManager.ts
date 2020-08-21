@@ -30,7 +30,7 @@ export default class GameManager extends cc.Component {
         return GameManager._instance;
     }
 
-    public controllMode:ControlMode = ControlMode.touch;
+    //public controllMode:ControlMode = ControlMode.touch;
 
     @property(cc.Prefab)
     public playerPrefabArr:cc.Prefab[] = [];

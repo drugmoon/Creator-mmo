@@ -98,7 +98,7 @@ export default class TopToolBar extends cc.Component {
         {
            // EventMgr.raiseEvent(EventType.Ack_LeaveFight, "ABCD");
 
-            SceneMap.instance.actionIdle();
+            SceneMap.instance.LeaveBattle();
         });
 
 

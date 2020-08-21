@@ -297,7 +297,7 @@ export default class Character extends cc.Component {
     * @return 
     * 
     */		
-   public getRoundRoadNodes():RoadNode[]
+    public getRoundRoadNodes():RoadNode[]
     {
         var nodeArr:RoadNode[] = [];
         var node:RoadNode = this.roadNode;

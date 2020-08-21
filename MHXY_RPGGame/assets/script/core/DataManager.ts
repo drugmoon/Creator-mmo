@@ -79,12 +79,36 @@ export default class DataManager extends cc.Component {
         RoleAttr_S._ID = 1001;
         RoleAttr_S._PlayerID = 10;
 
+        let RoleAttr_S_1 = new RoleAttributeVo;
+        RoleAttr_S_1._ID = 1002;
+        RoleAttr_S_1._PlayerID = 10;
+
+        let RoleAttr_S_2 = new RoleAttributeVo;
+        RoleAttr_S_2._ID = 1003;
+        RoleAttr_S_2._PlayerID = 10;
+
+
         let RoleAttr_F = new RoleAttributeVo;
-        RoleAttr_F._ID = 1002;
+        RoleAttr_F._ID = 2001;
         RoleAttr_F._PlayerID = 10;
 
+        let RoleAttr_F_1 = new RoleAttributeVo;
+        RoleAttr_F_1._ID = 2002;
+        RoleAttr_F_1._PlayerID = 10;
+
+        let RoleAttr_F_2 = new RoleAttributeVo;
+        RoleAttr_F_2._ID = 2003;
+        RoleAttr_F_2._PlayerID = 10;
+
+
         this.ownsideTeamVo[RoleAttr_S._Idx] = RoleAttr_S;
+        this.ownsideTeamVo[RoleAttr_S_1._Idx + 1] = RoleAttr_S_1;
+        this.ownsideTeamVo[RoleAttr_S_2._Idx + 2] = RoleAttr_S_2;
+
+
         this.hostileTeamVo[RoleAttr_F._Idx] = RoleAttr_F;
+        this.hostileTeamVo[RoleAttr_F_1._Idx + 1] = RoleAttr_F_1;
+        this.hostileTeamVo[RoleAttr_F_2._Idx + 2] = RoleAttr_F_2;
         // for(var i:number = 0 ; i < 1 ; i++)
         // {
         //     let pos = forma.self[i] ;

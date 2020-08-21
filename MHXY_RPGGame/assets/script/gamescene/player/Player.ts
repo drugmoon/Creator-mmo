@@ -17,6 +17,7 @@ import RoadNode from "../../map/road/RoadNode";
 import SceneMap from "../../SceneMap";
 import Character, { CharacterState } from "../../map/character/Character";
 import MovieClip from "../../map/character/MovieClip";
+import Point from "../../map/road/Point"
 import { EventMgr }  from "../../common/EventManager";
 import { EventType } from "../../common/EventType"; 
 
@@ -63,7 +64,37 @@ export enum ControlMode
 
 @ccclass
 export default class Player extends Character {
-
+	/** 攻击 */
+	public static  STATE_ATTACK = "attack";
+	/** 施法 */
+	public static  STATE_MAGIC = "magic";
+	/** 站立 */
+	public static  STATE_STAND = "stand";
+	/** 防御 */
+	public static  STATE_DEFEND = "defend";
+	/** 被击中 */
+	public static  STATE_HIT = "hit";
+	/** 倒下 */
+	public static  STATE_DIE = "die";
+	/** 移动 */
+	public static  STATE_WALK = "walk";
+	/** 哭泣 **/
+	public static  STATE_WEEP = "weep";
+	/** 舞蹈 */
+	public static  STATE_DANCE = "dance";
+	/** 发怒 */
+	public static  STATE_ANGRY = "angry";
+	/** 跑去 */
+	public static  STATE_RUSHA = "rusha";
+	/** 跑回 */
+	public static  STATE_RUSHB = "rushb";
+	/** 待战 */
+	public static  STATE_WRITBUTTLE = "writbuttle";
+	/** 人物坐骑站立 */
+	public static  STATE_MOUNT_STAND = "mountstand";
+	/** 人物坐骑移动 */
+    public static  STATE_MOUNT_WALK = "mountwalk";
+    
     @property({type:cc.Enum(PlayerControlType),tooltip:"玩家控制类型:\nnone  无控制 \nuser 用户操作 \nai ai操作 \nnet 网络玩家操作"})
     public controlType:PlayerControlType = PlayerControlType.none;
 
@@ -76,6 +107,17 @@ export default class Player extends Character {
     public body:Body = null;
 
     public moveDir:cc.Vec2 = cc.Vec2.ZERO;
+    
+    public pos:Point = new Point(0,0);
+    public getLocation()
+    {
+        return this.node.position;//this.pos;
+    }
+
+    public setLocation(x,y)
+    {
+        this.pos = new Point(x,y);
+    }
 
     public get movieClip():MovieClip
     {

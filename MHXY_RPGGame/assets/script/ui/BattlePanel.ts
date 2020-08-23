@@ -49,9 +49,11 @@ export default class BattlePanel extends cc.Component {
 
     public init()
     {
-        this.commandManager = new CommandManager(this);
-        this.setOwnsideTeam();
-        this.setHostileTeam();
+		this.commandManager = new CommandManager(this);
+		
+		this.setOwnsideTeam();
+		this.setHostileTeam();
+ 
 	}
 	public BattleCommand()
 	{
@@ -89,7 +91,7 @@ export default class BattlePanel extends cc.Component {
 
 		for (let i = 0; i < ownsideTeamVo.length; i++) {
             this.ownsideTeam[i] = GameManager.instance.getPlayer(ownsideTeamVo[i]._PlayerID);
-            this.ownsideTeam[i].controlMode = GameManager.instance.controllMode;
+           // this.ownsideTeam[i].controlMode = GameManager.instance.controllMode;
             this.ownsideTeam[i].node.position = cc.v2(530 - 55 * i, 560 - 400 - 45 * i);////cc.v2(100,100);//
             this.ownsideTeam[i].direction = 3;
 
@@ -129,7 +131,7 @@ export default class BattlePanel extends cc.Component {
             for (let i = 0; i < hostileTeamVo.length; i++) {
                 
                 this.hostileTeam[i] = GameManager.instance.getPlayer(hostileTeamVo[i]._PlayerID);
-                this.hostileTeam[i].controlMode = GameManager.instance.controllMode;
+                //this.hostileTeam[i].controlMode = GameManager.instance.controllMode;
                 this.hostileTeam[i].node.position = cc.v2(x1 - dx * i, 560 -  (y1 + dy * i));//cc.v2(200,200);
                 this.hostileTeam[i].direction = 7;
 				//560 - 
@@ -224,7 +226,7 @@ export default class BattlePanel extends cc.Component {
 	 * @param state
 	 *            Players.STATE_RUSHB||Players.STATE_RUSHA
 	 */
-	public rush(player:Player,  x,  y,  state) {
+	public rush(player:Player,  x,  y,  state, callback:Function = null) {
 
 		var node:RoadNode = new RoadNode();
 		

@@ -199,7 +199,7 @@ export default class Player extends Character {
 
         }
         console.log("set _state ", this._state);
-        
+        console.log("set _direction ", this._direction);
         this.direction = this._direction;
         this._movieClip.node.active = true;
         this._movieClip.playIndex = 0;
@@ -207,6 +207,11 @@ export default class Player extends Character {
         //如果是攻击只播发一次
         if(this._state == CharacterState.attack)
         {
+            //获取攻击方向
+            this.setAttackDir();
+
+            console.log("setAttackDir state ", this.movieClip.rowIndex);
+
             this._movieClip.playTimes = 0;
             this._movieClip.play();
             this._movieClip.reset();
@@ -214,7 +219,21 @@ export default class Player extends Character {
         }
         else
         {
+
             this._movieClip.playAction();
+        }
+    }
+
+    private setAttackDir()
+    {
+        switch(this._direction)
+        {
+            case 3 : 
+                this.movieClip.rowIndex = 2;//正面
+            break;
+            case 7 : 
+                this.movieClip.rowIndex = 0;//正左左
+            break;
         }
     }
 
@@ -233,7 +252,7 @@ export default class Player extends Character {
     
         super.start();
 
-        EventMgr.addEventListener(EventType.playActionFinish, ()=>{
+        EventMgr.addEventListener(EventType.BattleAction_Finish_ATTACK, ()=>{
             console.log("RecvActionMessage");
             //动作完成后切换状态
             this._movieClip.playTimes = 0;
@@ -263,7 +282,7 @@ export default class Player extends Character {
                 //this.setFaceDir(this.moveDir);
 
                 var speed:number = this.moveSpeed * dt;
-
+                console.log("speed " + speed);
                 var pos:cc.Vec2 = this.node.position.add(this.moveDir.mul(speed));
 
                 var nextNode:RoadNode = SceneMap.instance.getMapNodeByPixel(pos.x,pos.y);

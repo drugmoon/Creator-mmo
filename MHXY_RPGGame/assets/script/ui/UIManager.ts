@@ -71,8 +71,12 @@ export default class UIManager extends cc.Component {
 
     public initFightScene() {
 
-        this.initBattlePanel();
-        this.battlePanel.init();
+        if (this.battlePanel == null)
+        {
+            this.initBattlePanel();
+            this.battlePanel.init();
+        }
+
     }
 
     public BattleCommand(){
@@ -83,6 +87,7 @@ export default class UIManager extends cc.Component {
     public cleanFightScene()
     {
         this.battlePanel.node.removeAllChildren();
+        this.battlePanel = null;
         //this.battlePanel.reomovPlayer();
     }
     // update (dt) {}

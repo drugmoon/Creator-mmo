@@ -1,7 +1,8 @@
 import MovieClip from "./MovieClip";
 import RoadNode from "../road/RoadNode";
 import SceneMap from "../../SceneMap";
-
+import { EventMgr }  from "../../common/EventManager";
+import { EventType } from "../../common/EventType"; 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -106,6 +107,8 @@ export default class Character extends cc.Component {
 
     public moving:boolean = false;
 
+  //  public attacking:boolean = false;
+
     @property()
     public moveSpeed:number = 200;
 
@@ -137,7 +140,17 @@ export default class Character extends cc.Component {
         this.state = CharacterState.idle;
 
     }
+    public set attacking(value:boolean) {
 
+        if (value)
+        {
+            this.moveSpeed = 1000;
+        }
+        else
+        {
+            this.moveSpeed = 200;
+        }
+    }
     update (dt) 
     {
         if(this.moving)
@@ -147,7 +160,8 @@ export default class Character extends cc.Component {
             var dy:number = nextNode.py - this.node.y;
 
             var speed:number = this.moveSpeed * dt;
-
+            console.log("speed " + speed);
+            console.log("this.moveSpeed " + this.moveSpeed);
             if(dx * dx + dy * dy > speed * speed)
             {
                 if(this._moveAngle == 0)
@@ -172,7 +186,6 @@ export default class Character extends cc.Component {
                 {
                     this.node.x = nextNode.px;
                     this.node.y = nextNode.py
-
                     this.stop();
                 }else
                 {
@@ -253,7 +266,7 @@ export default class Character extends cc.Component {
      * 根据路节点路径行走
      * @param roadNodeArr 
      */
-    public walkByRoad(roadNodeArr:RoadNode[])
+    public walkByRoad(roadNodeArr:RoadNode[], callback:Function = null)
     {
         this._roadNodeArr = roadNodeArr;
         this._nodeIndex = 0;
@@ -261,6 +274,13 @@ export default class Character extends cc.Component {
 
         this.walk();
         this.move();
+
+        // EventMgr.addEventListener(EventType.BattleAction_Finish_MOVE, ()=>{
+        //     console.log("BattleAction_Finish_MOVE");
+        //     callback();
+        // })
+        
+        
     }
 
     private walk()

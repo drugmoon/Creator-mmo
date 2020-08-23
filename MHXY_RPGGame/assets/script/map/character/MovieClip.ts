@@ -197,7 +197,7 @@ export default class MovieClip extends cc.Component {
             this.running = false;
             this.playIndex = 0;//reset
             this.currentFrame = 0;
-            EventMgr.raiseEvent(EventType.playActionFinish, "");
+            EventMgr.raiseEvent(EventType.BattleAction_Finish_ATTACK, "");
             return;
         }
             
@@ -278,6 +278,7 @@ export default class MovieClip extends cc.Component {
     //播发一次
     public playActionOnce()
     {
+        console.log("rowIndex ", this.rowIndex);
         this.playTimes = 1;
     }
 

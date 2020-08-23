@@ -16,7 +16,25 @@ export class EventType
     public static Req_cmd_def :string='Req_cmd_def'; //防御
     
 
-    public static playActionFinish:string="playActionFinish";
+    //攻击动作结束
+    public static BattleAction_Finish_ATTACK:string = "BattleAction_Finish_ATTACK";
+
+    //移动动作结束
+    public static BattleAction_Finish_MOVE:string   = "BattleAction_Finish_MOVE";
+
+    //施法
+    public static BattleAction_Finish_MAGIC:string  = "BattleAction_Finish_MAGIC";
+
+    //防御
+    public static BattleAction_Finish_DEFEND:string  = "BattleAction_Finish_DEFEND";
+
+    //被击中
+    public static BattleAction_Finish_HIT:string  = "BattleAction_Finish_HIT";
+
+    //倒下
+    public static BattleAction_Finish_DIE:string  = "BattleAction_Finish_DIE";
+    
+
     // public static EVENT_NAME:string='event_name';
     // public static MAIN_BTN_EVENT:string='main_btn_event';
     // public static SWITCH_PANEL:string='Switch_panel';

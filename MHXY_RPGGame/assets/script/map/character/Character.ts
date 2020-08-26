@@ -32,6 +32,14 @@ export enum CharacterState
      * 攻击
      */
     attack = 3,
+    /**
+     * 施法
+     */
+    magic = 4,
+    /**
+     * 施法
+     */
+    hit = 5,
 }
 
 /**
@@ -137,6 +145,10 @@ export default class Character extends cc.Component {
         this.node.getChildByName("Body").getChildByName("Skin_Idle").active = false;
         this.node.getChildByName("Body").getChildByName("Skin_Walk").active = false;
         if(this.node.getChildByName("Body").getChildByName("Skin_Attack")) this.node.getChildByName("Body").getChildByName("Skin_Attack").active = false;
+        if(this.node.getChildByName("Body").getChildByName("Skin_Magic")) this.node.getChildByName("Body").getChildByName("Skin_Magic").active = false;
+        if(this.node.getChildByName("Body").getChildByName("Skin_Hit")) this.node.getChildByName("Body").getChildByName("Skin_Hit").active = false;
+       // if(this.node.getChildByName("Body").getChildByName("Skin_Die")) this.node.getChildByName("Body").getChildByName("Skin_Die").active = false;
+
         this.state = CharacterState.idle;
 
     }
@@ -294,6 +306,16 @@ export default class Character extends cc.Component {
         }
     }
     
+    public hit()
+    {
+        this.state = CharacterState.hit;
+    }
+
+    public magic()
+    {       
+        this.state = CharacterState.magic;
+    }
+
     public attack()
     {
         this.state = CharacterState.attack;

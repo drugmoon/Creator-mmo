@@ -196,7 +196,12 @@ export default class Player extends Character {
             case CharacterState.attack: 
                 this._movieClip = this.node.getChildByName("Body").getChildByName("Skin_Attack").getComponent(MovieClip);
             break;
-
+            case CharacterState.magic: 
+                this._movieClip = this.node.getChildByName("Body").getChildByName("Skin_Magic").getComponent(MovieClip);
+            break;
+            case CharacterState.hit: 
+                this._movieClip = this.node.getChildByName("Body").getChildByName("Skin_Hit").getComponent(MovieClip);
+            break;
         }
         console.log("set _state ", this._state);
         console.log("set _direction ", this._direction);
@@ -212,6 +217,21 @@ export default class Player extends Character {
 
             console.log("setAttackDir state ", this.movieClip.rowIndex);
 
+            this._movieClip.characterState = this._state;
+            this._movieClip.playTimes = 0;
+            this._movieClip.play();
+            this._movieClip.reset();
+            this._movieClip.playActionOnce();
+
+        }
+        else if(this._state == CharacterState.hit)
+        {
+            //获取攻击方向
+            this.setHitDir();
+
+            console.log("setHitDir state ", this.movieClip.rowIndex);
+
+            this._movieClip.characterState = this._state;
             this._movieClip.playTimes = 0;
             this._movieClip.play();
             this._movieClip.reset();
@@ -224,12 +244,29 @@ export default class Player extends Character {
         }
     }
 
+    public getClip()
+    {
+        return this._movieClip;
+    }
     private setAttackDir()
     {
         switch(this._direction)
         {
             case 3 : 
                 this.movieClip.rowIndex = 2;//正面
+            break;
+            case 7 : 
+                this.movieClip.rowIndex = 0;//正左左
+            break;
+        }
+    }
+
+    private setHitDir()
+    {
+        switch(this._direction)
+        {
+            case 3 : 
+                this.movieClip.rowIndex = 1;//正面
             break;
             case 7 : 
                 this.movieClip.rowIndex = 0;//正左左
@@ -252,14 +289,7 @@ export default class Player extends Character {
     
         super.start();
 
-        EventMgr.addEventListener(EventType.BattleAction_Finish_ATTACK, ()=>{
-            console.log("RecvActionMessage");
-            //动作完成后切换状态
-            this._movieClip.playTimes = 0;
-            this.stop();
-            //this._movieClip.reset();
-            this._movieClip.play();
-        })
+
         
     }
 

@@ -10,7 +10,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 import { EventMgr }  from "../../common/EventManager";
 import { EventType } from "../../common/EventType"; 
-
+import Character, { CharacterState } from "../../map/character/Character";
 const {ccclass, property} = cc._decorator;
 
 /**
@@ -111,6 +111,9 @@ export default class MovieClip extends cc.Component {
 
     //private _direction:number = 1;
 
+    //
+    public characterState:CharacterState = CharacterState.idle;
+
     private _playIndex: number = 0;
     public get playIndex(): number {
         return this._playIndex;
@@ -197,7 +200,18 @@ export default class MovieClip extends cc.Component {
             this.running = false;
             this.playIndex = 0;//reset
             this.currentFrame = 0;
-            EventMgr.raiseEvent(EventType.BattleAction_Finish_ATTACK, "");
+            if (this.characterState == CharacterState.attack)
+            {
+                EventMgr.raiseEvent(EventType.BattleAction_Finish_ATTACK, "");
+            }
+            else if (this.characterState == CharacterState.magic)
+            {
+                EventMgr.raiseEvent(EventType.BattleAction_Finish_MAGIC, "");
+            }
+            else if (this.characterState == CharacterState.hit)
+            {
+                EventMgr.raiseEvent(EventType.BattleAction_Finish_HIT, "");
+            }
             return;
         }
             

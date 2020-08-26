@@ -1,0 +1,1 @@
+[string "	local config_name = ...	local f = assert(io...."]:1: ./config/bs_config.lua: No such file or directory

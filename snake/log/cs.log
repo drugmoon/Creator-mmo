@@ -1,0 +1,252 @@
+[:12-18_16-19-13][:00000001] LAUNCH logger log/cs.log
+[:12-18_16-19-13][:00000002] LAUNCH snlua bootstrap
+[:12-18_16-19-13][:00000002] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-13][:00000002] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-13][:00000003] LAUNCH snlua launcher
+[:12-18_16-19-13][:00000003] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-13][:00000003] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-13][:00000004] LAUNCH snlua cdummy
+[:12-18_16-19-13][:00000004] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-13][:00000004] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-13][:00000005] LAUNCH harbor 0 4
+[:12-18_16-19-13][:00000006] LAUNCH snlua datacenterd
+[:12-18_16-19-13][:00000006] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-13][:00000006] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-13][:00000007] LAUNCH snlua service_mgr
+[:12-18_16-19-13][:00000007] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-13][:00000007] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-13][:00000008] LAUNCH snlua cs_launcher
+[:12-18_16-19-13][:00000008] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-13][:00000008] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-13][:00000008] [INFO] cs start
+[:12-18_16-19-13][:00000009] LAUNCH snlua debug_console 10001
+[:12-18_16-19-13][:00000009] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-13][:00000009] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-13][:00000009] Start debug console at 127.0.0.1 10001
+[:12-18_16-19-13][:0000000a] LAUNCH snlua res
+[:12-18_16-19-13][:0000000a] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-13][:0000000a] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-13][:0000000b] LAUNCH snlua sharedatad
+[:12-18_16-19-13][:0000000b] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-13][:0000000b] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-14][:0000000b] Memory warning 32.00 M
+[:12-18_16-19-15][:0000000a] [INFO] res service booted
+[:12-18_16-19-15][:0000000c] LAUNCH snlua rt_monitor
+[:12-18_16-19-15][:0000000c] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-15][:0000000c] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-15][:0000000c] [INFO] rt_monitor service booted
+[:12-18_16-19-15][:0000000d] LAUNCH snlua mem_monitor
+[:12-18_16-19-15][:0000000d] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-15][:0000000d] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-15][:0000000d] [INFO] mem_monitor service booted
+[:12-18_16-19-15][:0000000e] LAUNCH snlua dictator
+[:12-18_16-19-15][:0000000e] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-15][:0000000e] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-15][:0000000e] start dictator at 127.0.0.1 10002
+[:12-18_16-19-15][:0000000e] [INFO] dictator service booted
+[:12-18_16-19-15][:0000000f] LAUNCH snlua router_s 1
+[:12-18_16-19-16][:0000000f] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:0000000f] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:00000010] LAUNCH zinc_gate S :0000000f 10010 13 10000 0
+[:12-18_16-19-16][:0000000f] [INFO] router_s service booted
+[:12-18_16-19-16][:00000011] LAUNCH snlua router_s 2
+[:12-18_16-19-16][:00000011] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:00000011] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:00000012] LAUNCH zinc_gate S :00000011 10011 13 10000 0
+[:12-18_16-19-16][:00000011] [INFO] router_s service booted
+[:12-18_16-19-16][:00000013] LAUNCH snlua router_s 3
+[:12-18_16-19-16][:00000013] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:00000013] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:00000014] LAUNCH zinc_gate S :00000013 10012 13 10000 0
+[:12-18_16-19-16][:00000013] [INFO] router_s service booted
+[:12-18_16-19-16][:00000015] LAUNCH snlua router_s 4
+[:12-18_16-19-16][:00000015] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:00000015] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:00000016] LAUNCH zinc_gate S :00000015 10013 13 10000 0
+[:12-18_16-19-16][:00000015] [INFO] router_s service booted
+[:12-18_16-19-16][:00000017] LAUNCH snlua router_c
+[:12-18_16-19-16][:00000017] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:00000017] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:00000017] [INFO] router_c service booted
+[:12-18_16-19-16][:00000018] LAUNCH snlua webrouter
+[:12-18_16-19-16][:00000018] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:00000018] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:00000019] LAUNCH snlua webhandler
+[:12-18_16-19-16][:00000019] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:00000019] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:00000019] [INFO] webhandler service booted
+[:12-18_16-19-16][:0000001a] LAUNCH snlua webhandler
+[:12-18_16-19-16][:0000001a] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:0000001a] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:0000001a] [INFO] webhandler service booted
+[:12-18_16-19-16][:0000001b] LAUNCH snlua webhandler
+[:12-18_16-19-16][:0000001b] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:0000001b] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:0000001b] [INFO] webhandler service booted
+[:12-18_16-19-16][:0000001c] LAUNCH snlua webhandler
+[:12-18_16-19-16][:0000001c] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:0000001c] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:0000001c] [INFO] webhandler service booted
+[:12-18_16-19-16][:0000001d] LAUNCH snlua webhandler
+[:12-18_16-19-16][:0000001d] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:0000001d] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:0000001d] [INFO] webhandler service booted
+[:12-18_16-19-16][:0000001e] LAUNCH snlua webhandler
+[:12-18_16-19-16][:0000001e] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-16][:0000001e] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-16][:0000001e] [INFO] webhandler service booted
+[:12-18_16-19-16][:0000001f] LAUNCH snlua webhandler
+[:12-18_16-19-17][:0000001f] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-17][:0000001f] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-17][:0000001f] [INFO] webhandler service booted
+[:12-18_16-19-17][:00000020] LAUNCH snlua webhandler
+[:12-18_16-19-17][:00000020] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-17][:00000020] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-17][:00000020] [INFO] webhandler service booted
+[:12-18_16-19-17][:00000021] LAUNCH snlua webhandler
+[:12-18_16-19-17][:00000021] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-17][:00000021] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-17][:00000021] [INFO] webhandler service booted
+[:12-18_16-19-17][:00000022] LAUNCH snlua webhandler
+[:12-18_16-19-17][:00000022] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-17][:00000022] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-17][:00000022] [INFO] webhandler service booted
+[:12-18_16-19-17][:00000018] [INFO] webrouter listen web port 10003
+[:12-18_16-19-17][:00000018] [INFO] webrouter service booted
+[:12-18_16-19-17][:00000023] LAUNCH snlua gamedb 1
+[:12-18_16-19-17][:00000023] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-17][:00000023] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-17][:00000023] [INFO] gamedb service booted
+[:12-18_16-19-17][:00000024] LAUNCH snlua gamedb 2
+[:12-18_16-19-17][:00000024] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-17][:00000024] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-17][:00000024] [INFO] gamedb service booted
+[:12-18_16-19-17][:00000025] LAUNCH snlua gamedb 3
+[:12-18_16-19-17][:00000025] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-17][:00000025] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-18][:00000025] [INFO] gamedb service booted
+[:12-18_16-19-18][:00000026] LAUNCH snlua gamedb 4
+[:12-18_16-19-18][:00000026] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-18][:00000026] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-18][:00000026] [INFO] gamedb service booted
+[:12-18_16-19-18][:00000027] LAUNCH snlua logdb
+[:12-18_16-19-18][:00000027] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-18][:00000027] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-18][:00000027] [INFO] logdb service booted
+[:12-18_16-19-18][:00000028] LAUNCH snlua serversetter
+[:12-18_16-19-18][:00000028] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-18][:00000028] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-18][:00000028] [INFO] serversetter service booted
+[:12-18_16-19-18][:00000029] LAUNCH snlua idsupply
+[:12-18_16-19-19][:00000029] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-19][:00000029] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-19][:00000029] [INFO] idsupply service booted
+[:12-18_16-19-19][:0000002a] LAUNCH snlua loginverify 1
+[:12-18_16-19-19][:0000002a] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-19][:0000002a] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-19][:0000002a] [INFO] loginverify service booted
+[:12-18_16-19-19][:0000002b] LAUNCH snlua loginverify 2
+[:12-18_16-19-19][:0000002b] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-19][:0000002b] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-19][:0000002b] [INFO] loginverify service booted
+[:12-18_16-19-19][:0000002c] LAUNCH snlua loginverify 3
+[:12-18_16-19-19][:0000002c] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-19][:0000002c] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-19][:0000002c] [INFO] loginverify service booted
+[:12-18_16-19-19][:0000002d] LAUNCH snlua loginverify 4
+[:12-18_16-19-20][:0000002d] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-20][:0000002d] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-20][:0000002d] [INFO] loginverify service booted
+[:12-18_16-19-20][:0000002e] LAUNCH snlua datacenter
+[:12-18_16-19-20][:0000002e] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-20][:0000002e] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-20][:0000002e] [INFO] datacenter service booted
+[:12-18_16-19-20][:0000002f] LAUNCH snlua logfile
+[:12-18_16-19-21][:0000002f] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-21][:0000002f] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-21][:0000002f] [INFO] logfile service booted
+[:12-18_16-19-21][:00000030] LAUNCH snlua logmonitor
+[:12-18_16-19-21][:00000030] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-21][:00000030] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-21][:00000030] [INFO] logmonitor service booted
+[:12-18_16-19-21][:00000031] LAUNCH snlua redeemcode
+[:12-18_16-19-22][:00000031] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-22][:00000031] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-22][:00000031] [INFO] redeemcode service booted
+[:12-18_16-19-22][:00000032] LAUNCH snlua qrcode 10004
+[:12-18_16-19-22][:00000032] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-22][:00000032] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-22][:00000033] LAUNCH zinc_gate S :00000032 10004 13 10000 -2271245531232191831
+[:12-18_16-19-22][:00000032] [INFO] qrcode service booted
+[:12-18_16-19-22][:00000034] LAUNCH snlua qrcode 10005
+[:12-18_16-19-22][:00000034] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-22][:00000034] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-22][:00000035] LAUNCH zinc_gate S :00000034 10005 13 10000 -2271245531232191831
+[:12-18_16-19-22][:00000034] [INFO] qrcode service booted
+[:12-18_16-19-22][:00000036] LAUNCH snlua qrcode 10006
+[:12-18_16-19-22][:00000036] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-22][:00000036] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-22][:00000037] LAUNCH zinc_gate S :00000036 10006 13 10000 -2271245531232191831
+[:12-18_16-19-22][:00000036] [INFO] qrcode service booted
+[:12-18_16-19-22][:00000038] LAUNCH snlua qrcode 10007
+[:12-18_16-19-23][:00000038] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-23][:00000038] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-23][:00000039] LAUNCH zinc_gate S :00000038 10007 13 10000 -2271245531232191831
+[:12-18_16-19-23][:00000038] [INFO] qrcode service booted
+[:12-18_16-19-23][:0000003a] LAUNCH snlua qrcode 10008
+[:12-18_16-19-23][:0000003a] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-23][:0000003a] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-23][:0000003b] LAUNCH zinc_gate S :0000003a 10008 13 10000 -2271245531232191831
+[:12-18_16-19-23][:0000003a] [INFO] qrcode service booted
+[:12-18_16-19-23][:0000003c] LAUNCH snlua qrcode 10009
+[:12-18_16-19-23][:0000003c] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-23][:0000003c] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-23][:0000003d] LAUNCH zinc_gate S :0000003c 10009 13 10000 -2271245531232191831
+[:12-18_16-19-23][:0000003c] [INFO] qrcode service booted
+[:12-18_16-19-23][:0000003e] LAUNCH snlua pay 1
+[:12-18_16-19-23][:0000003e] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-23][:0000003e] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-23][:0000003e] [INFO] pay service booted
+[:12-18_16-19-23][:0000003f] LAUNCH snlua pay 2
+[:12-18_16-19-23][:0000003f] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-23][:0000003f] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-24][:0000003f] [INFO] pay service booted
+[:12-18_16-19-24][:00000040] LAUNCH snlua pay 3
+[:12-18_16-19-24][:00000040] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-24][:00000040] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-24][:00000040] [INFO] pay service booted
+[:12-18_16-19-24][:00000041] LAUNCH snlua pay 4
+[:12-18_16-19-24][:00000041] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-24][:00000041] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-24][:00000041] [INFO] pay service booted
+[:12-18_16-19-24][:00000042] LAUNCH snlua backendinfo
+[:12-18_16-19-24][:00000042] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-24][:00000042] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-24][:00000042] [INFO] backendinfo service booted
+[:12-18_16-19-24][:00000043] LAUNCH snlua merger
+[:12-18_16-19-25][:00000043] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-25][:00000043] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-25][:00000043] [INFO] merger service booted
+[:12-18_16-19-25][:00000044] LAUNCH snlua guozi
+[:12-18_16-19-25][:00000044] mkdir err /mnt/snake/log/ Msg: No such file or directory
+[:12-18_16-19-25][:00000044] mkdir err /mnt/snake/log/dev_cs Msg: No such file or directory
+[:12-18_16-19-25][:00000044] [INFO] guozi service booted
+[:12-18_16-19-25][:00000008] [INFO] cs all service booted
+[:12-18_16-19-25][:00000008] KILL self
+[:12-18_16-19-25][:00000002] KILL self
+[:12-18_16-24-39][:00000040] [INFO] com.cilu.dhxx.gold_648
+[:12-18_16-25-23][:00000018] [Socket Error]
+[:12-18_16-25-23][:00000018] [ERROR] HttpRequest error:nil
+[:12-18_16-25-23][:0000003f] [WARNING] httpuse POST (host:127.0.0.1:2001 url:/demisdkdev/v1/sdkc/integration/prePay.json content:country=&gender=1&productDesc=%E8%8E%B7%E5%BE%97980%E5%85%83%E5%AE%9D&ext=%7B%22account%22%3A%22bnz456456%22%7D&productId=com%2Ecilu%2Edhxx%2Egold_98&roleClass=1&amount=1&uid=bnz456456&currencyType=&p=0&imei=&serverId=10001&language=&operators=0&accountType=6&ip=192%2E168%2E200%2E1&roleId=10103&grade=2&resolution=&mac=02%3A00%3A00%3A00%3A00%3A00&callbackURL=https%3A%2F%2Fdevh7%2Ecilugame%2Ecom%2Fdemisdkcb%2Fpaycb&payWay=demi&platform=4&productName=%E5%85%83%E5%AE%9D&roleRace=1&brand=Netease%20MuMu&cent=9800&sign=0145aa183c86008a1d138b8093612699&orderId=1224948465092529282&age=20&appId=3&province=&netType=0&osVersion=Android%20OS%206%2E0%2E1%20%2F%20API%2D23%20%28V417IR%2Feng%2Eroot%2E20191031%2E114252%29 header:{['Content-type']="application/x-www-form-urlencoded"}) warning, errcode:1 statuscode:nil
+[:12-18_16-25-24][:00000018] [Socket Error]
+[:12-18_16-25-24][:00000018] [ERROR] HttpRequest error:nil
+[:12-18_16-25-24][:00000018] [Socket Error]
+[:12-18_16-25-24][:00000018] [ERROR] HttpRequest error:nil
+[:12-18_16-25-24][:00000018] [Socket Error]
+[:12-18_16-25-24][:00000018] [ERROR] HttpRequest error:nil
+[:12-18_16-25-24][:0000003f] [WARNING] httpuse POST (host:127.0.0.1:2001 url:/demisdkdev/v1/sdkc/integration/prePay.json content:country=&gender=1&productDesc=%E8%8E%B7%E5%BE%97980%E5%85%83%E5%AE%9D&ext=%7B%22account%22%3A%22bnz456456%22%7D&productId=com%2Ecilu%2Edhxx%2Egold_98&roleClass=1&amount=1&uid=bnz456456&currencyType=&p=0&imei=&serverId=10001&language=&operators=0&accountType=6&ip=192%2E168%2E200%2E1&roleId=10103&grade=2&resolution=&mac=02%3A00%3A00%3A00%3A00%3A00&callbackURL=https%3A%2F%2Fdevh7%2Ecilugame%2Ecom%2Fdemisdkcb%2Fpaycb&payWay=demi&platform=4&productName=%E5%85%83%E5%AE%9D&roleRace=1&brand=Netease%20MuMu&cent=9800&sign=edae7aec3c64d54d99a8140d4e7ac311&orderId=1224948490258353282&age=20&appId=3&province=&netType=0&osVersion=Android%20OS%206%2E0%2E1%20%2F%20API%2D23%20%28V417IR%2Feng%2Eroot%2E20191031%2E114252%29 header:{['Content-type']="application/x-www-form-urlencoded"}) warning, errcode:1 statuscode:nil
+[:12-18_16-25-24][:0000003f] [WARNING] httpuse POST (host:127.0.0.1:2001 url:/demisdkdev/v1/sdkc/integration/prePay.json content:country=&gender=1&productDesc=%E8%8E%B7%E5%BE%97980%E5%85%83%E5%AE%9D&ext=%7B%22account%22%3A%22bnz456456%22%7D&productId=com%2Ecilu%2Edhxx%2Egold_98&roleClass=1&amount=1&uid=bnz456456&currencyType=&p=0&imei=&serverId=10001&language=&operators=0&accountType=6&ip=192%2E168%2E200%2E1&roleId=10103&grade=2&resolution=&mac=02%3A00%3A00%3A00%3A00%3A00&callbackURL=https%3A%2F%2Fdevh7%2Ecilugame%2Ecom%2Fdemisdkcb%2Fpaycb&payWay=demi&platform=4&productName=%E5%85%83%E5%AE%9D&roleRace=1&brand=Netease%20MuMu&cent=9800&sign=7cb377948d3c9a5a5ef624e14f785792&orderId=1224948490258353286&age=20&appId=3&province=&netType=0&osVersion=Android%20OS%206%2E0%2E1%20%2F%20API%2D23%20%28V417IR%2Feng%2Eroot%2E20191031%2E114252%29 header:{['Content-type']="application/x-www-form-urlencoded"}) warning, errcode:1 statuscode:nil
+[:12-18_16-25-24][:0000003f] [WARNING] httpuse POST (host:127.0.0.1:2001 url:/demisdkdev/v1/sdkc/integration/prePay.json content:country=&gender=1&productDesc=%E8%8E%B7%E5%BE%976480%E5%85%83%E5%AE%9D&ext=%7B%22account%22%3A%22bnz456456%22%7D&productId=com%2Ecilu%2Edhxx%2Egold_648&roleClass=1&amount=1&uid=bnz456456&currencyType=&p=0&imei=&serverId=10001&language=&operators=0&accountType=6&ip=192%2E168%2E200%2E1&roleId=10103&grade=2&resolution=&mac=02%3A00%3A00%3A00%3A00%3A00&callbackURL=https%3A%2F%2Fdevh7%2Ecilugame%2Ecom%2Fdemisdkcb%2Fpaycb&payWay=demi&platform=4&productName=%E5%85%83%E5%AE%9D&roleRace=1&brand=Netease%20MuMu&cent=64800&sign=e510819a156591d97f9a1f1f1b9d82f2&orderId=1224948490258353290&age=20&appId=3&province=&netType=0&osVersion=Android%20OS%206%2E0%2E1%20%2F%20API%2D23%20%28V417IR%2Feng%2Eroot%2E20191031%2E114252%29 header:{['Content-type']="application/x-www-form-urlencoded"}) warning, errcode:1 statuscode:nil
+[:12-18_16-25-25][:00000018] [Socket Error]
+[:12-18_16-25-25][:00000018] [ERROR] HttpRequest error:nil
+[:12-18_16-25-25][:00000041] [WARNING] httpuse POST (host:127.0.0.1:2001 url:/demisdkdev/v1/sdkc/integration/prePay.json content:orderId=1224948504351214724&imei=&accountType=6&mac=02%3A00%3A00%3A00%3A00%3A00&amount=1&operators=0&serverId=10001&country=&gender=1&appId=3&productName=%E5%85%83%E5%AE%9D&payWay=demi&currencyType=&language=&uid=bnz456456&ext=%7B%22account%22%3A%22bnz456456%22%7D&productDesc=%E8%8E%B7%E5%BE%976480%E5%85%83%E5%AE%9D&netType=0&roleId=10103&grade=2&osVersion=Android%20OS%206%2E0%2E1%20%2F%20API%2D23%20%28V417IR%2Feng%2Eroot%2E20191031%2E114252%29&sign=b4c8a5baeafbb2618f8cccf4cbe29b07&resolution=&roleRace=1&cent=64800&province=&platform=4&roleClass=1&productId=com%2Ecilu%2Edhxx%2Egold_648&p=0&age=20&ip=192%2E168%2E200%2E1&callbackURL=https%3A%2F%2Fdevh7%2Ecilugame%2Ecom%2Fdemisdkcb%2Fpaycb&brand=Netease%20MuMu header:{['Content-type']="application/x-www-form-urlencoded"}) warning, errcode:1 statuscode:nil
